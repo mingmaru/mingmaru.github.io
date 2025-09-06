@@ -6,69 +6,212 @@
   <title>Minguhn Kim</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
-    body {
+    /* --- Basic Reset and Global Styles --- */
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background-color: #f7f7f7;
+      background-color: #f7f7f7; /* Background for the scrollable area */
     }
-    nav {
-      background-color: #0057b7;
-      padding: 10px;
-      margin-bottom: 30px;
+
+    /* --- The Two-Column Layout --- */
+
+    /* Sidebar (Left Column) - Fixed */
+    .sidebar {
+      position: fixed; /* This is the key to keeping it in place */
+      top: 0;
+      left: 0;
+      width: 300px; /* Fixed width for the sidebar */
+      height: 100vh; /* Full viewport height */
+      background-color: #ffffff; /* A clean white background */
+      padding: 30px;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      overflow-y: auto; /* Allows sidebar to scroll if content is too long */
     }
-    nav a {
-      color: white;
-      margin-right: 15px;
+
+    /* Main Content (Right Column) - Scrollable */
+    .main-content {
+      margin-left: 300px; /* MUST be the same as the sidebar's width */
+      padding: 40px;
+    }
+
+    /* --- Sidebar Element Styling --- */
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar h2 {
+      margin: 10px 0;
+      font-size: 24px;
+      color: #333;
+    }
+    
+    .sidebar .social-links a {
+      color: #0057b7;
+      font-size: 28px;
+      margin: 0 8px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .sidebar .social-links a:hover {
+      color: #003366;
+    }
+
+    .sidebar nav {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar nav a {
+      color: #333;
       text-decoration: none;
       font-weight: bold;
+      font-size: 18px;
+      padding: 10px 0;
+      transition: color 0.3s ease;
     }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    h1 {
+
+    .sidebar nav a:hover {
       color: #0057b7;
     }
-    p {
+
+    /* --- Main Content Element Styling --- */
+
+    .main-content h1 {
+      color: #0057b7;
+      font-size: 36px;
+    }
+
+    .main-content p {
       font-size: 18px;
       line-height: 1.6;
+      color: #444;
     }
+
     .footer {
       margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
       font-size: 14px;
       color: #888;
+    }
+    
+    .tech-icons i {
+        font-size: 24px;
+        margin-right: 10px;
+        color: #0057b7;
+    }
+
+
+    /* --- Responsive Design for Mobile --- */
+    /* On screens 768px or less, the layout becomes a single column */
+    @media (max-width: 768px) {
+      .sidebar {
+        position: static; /* Remove fixed positioning */
+        width: 100%;     /* Take up full width */
+        height: auto;    /* Height becomes automatic */
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .main-content {
+        margin-left: 0; /* Remove the margin */
+        padding: 20px;
+      }
+    }
+
+    .main-content section {
+      margin-bottom: 40px; /* Adds space between sections */
+      padding-bottom: 20px; /* Adds a bit of padding */
+      border-bottom: 1px solid #eee; /* A subtle line to separate sections */
+    }
+
+    .main-content section:last-of-type {
+        border-bottom: none; /* Removes the line after the last section */
     }
   </style>
 </head>
 <body>
+  <aside class="sidebar">
+    <img src="profile_image.webp" alt="Minguhn Kim Profile Picture" class="profile-image">
+    <h2>Minguhn Kim</h2>
+    
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+    </div>
+    
+    <nav id="sidebar-nav">
+      <a href="#" class="sidebar-link" data-tab="home">Home</a>
+      <a href="#" class="sidebar-link" data-tab="presentations">Oral Presentations</a>
+    </nav>
+  </aside>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="papers.html">Papers</a>
-  </nav>
+  <main class="main-content">
 
-  <h1>Hello, I'm Minguhn Kim 👋</h1>
-  <p>
-    I'm an electrical engineering student passionate about analog circuit design, AI-based optimization, and meaningful research.
-  </p>
-  <p>
-    My approach to research combines two worlds:
-    a deep understanding of why circuits work, and the expertise to build tools that define how they are designed.
-    Grounded in device physics and analog circuit theory, I develop sophisticated algorithms to discover optimal solutions and maximize the performance of circuit designs.
-  </p>
-  <p>
-    My goal isn't just to design a single circuit,
-    but to create the automated methodologies that empower the design of countless others,
-    ultimately pioneering the next generation of hardware for the music and audio industry.
-    <i class="fa-solid fa-music"></i>
-    <i class="fa-solid fa-headphones"></i>
-    <i class="fa-solid fa-microphone-lines"></i>
-  </p>
+    <section id="home">
+      <h1>Hello, I'm Minguhn Kim 👋</h1>
+      <p>
+        I'm an interdisciplinary researcher who is not afraid to learn new methods and enjoys challenges.
+        My interests span from hardware to software, and I have also fallen in love with music.
+      </p>
+      <p>
+        My approach to research combines two worlds:
+        a deep understanding of why circuits work, and the expertise to build tools that define how they are designed.
+        Grounded in device physics and analog circuit theory, I develop sophisticated algorithms to discover optimal solutions and maximize the performance of circuit designs.
+      </p>
+      <p>
+        My goal isn't just to design a single circuit,
+        but to create the automated methodologies that empower the design of countless others,
+        ultimately pioneering the next generation of hardware for the music and audio industry.
+      </p>
+      <p class="tech-icons">
+        <i class="fa-solid fa-music"></i>
+        <i class="fa-solid fa-headphones"></i>
+        <i class="fa-solid fa-microphone-lines"></i>
+      </p>
+    </section>
 
-  <div class="footer">
-    &copy; 2025 Minguhn Kim
-  </div>
+    <section id="presentations">
+      <h1>Oral Presentations</h1>
+      <p>
+        This is where you can list your oral presentations. You can add titles, conference names, and dates.
+      </p>
+      <p>
+        <strong>Conference Name 2025</strong><br>
+        <em>Title of Your Presentation</em><br>
+        Location, Date
+      </p>
+      <p>
+        <strong>Another Conference 2024</strong><br>
+        <em>Title of Another Presentation</em><br>
+        Location, Date
+      </p>
+    </section>
+
+    <div class="footer">
+      &copy; 2025 Minguhn Kim
+    </div>
+
+  </main>
 
 </body>
 </html>
