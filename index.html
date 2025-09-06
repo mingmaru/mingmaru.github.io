@@ -147,6 +147,38 @@
     .main-content section:last-of-type {
         border-bottom: none; /* Removes the line after the last section */
     }
+
+    /* --- Presentation List Styling --- */
+    .presentation-category h3 {
+      font-size: 22px; /* Makes 'Lab Seminar' larger */
+      color: #333;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    .paper-list {
+      list-style-type: none; /* Removes the bullet points from the list */
+      padding-left: 0;
+    }
+
+    .paper-entry {
+      margin-bottom: 25px; /* Adds space between different paper entries */
+    }
+
+    .paper-title {
+      font-size: 18px;
+      margin-bottom: 5px; /* Reduces the gap below the title */
+      color: #333;
+    }
+
+    .paper-entry .paper-citation, 
+    .paper-entry .paper-location {
+      margin-top: 0;
+      margin-bottom: 1px;
+      font-size: 14px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
@@ -193,13 +225,19 @@
 
     <section id="presentations">
       <h1>Oral Presentations</h1>
-      <p>
-        <strong>Lab Seminar</strong><br>
-        <h4>ML-Based Fast and Accurate Performance Modeling and Prediction for High-Speed Memory Interfaces across Different Technologies</h4>
-        <em>Taehoon Kim et al., in DATE, 2025</em><br>
-        LG Cooperative Electronics Engineering Building,<br>
-        Pohang, July 14, 2025
-      </p>
+
+      <div class="presentation-category">
+        <h3>Lab Seminar</h3>
+        <ul class="paper-list">
+          
+          <li class="paper-entry">
+            <h4 class="paper-title">ML-Based Fast and Accurate Performance Modeling and Prediction for High-Speed Memory Interfaces across Different Technologies</h4>
+            <p class="paper-citation"><em>Taehoon Kim et al., in DATE, 2025</em></p>
+            <p class="paper-location">LG Cooperative Electronics Engineering Building, Pohang, July 14, 2025</p>
+          </li>
+
+          </ul>
+      </div>
     </section>
 
     <div class="footer">
