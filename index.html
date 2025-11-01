@@ -6,187 +6,394 @@
   <title>Minguhn Kim</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
-    /* --- Basic Reset and Global Styles --- */
-    * {
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      scroll-behavior: smooth; /* This enables smooth scrolling */
-    }
+  /* --- Basic Reset and Global Styles --- */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    scroll-behavior: smooth;
+  }
 
-    /* --- The Two-Column Layout --- */
+  /* --- The Two-Column Layout --- */
 
-    /* Sidebar (Left Column) - Fixed */
-    .sidebar {
-      position: fixed; /* This is the key to keeping it in place */
-      top: 0;
-      left: 0;
-      width: 300px; /* Fixed width for the sidebar */
-      height: 100vh; /* Full viewport height */
-      background-color: #ffffff; /* A clean white background */
-      padding: 30px;
-      border-right: 1px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      overflow-y: auto; /* Allows sidebar to scroll if content is too long */
-    }
+  /* Sidebar (Left Column) - Fixed */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 30px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+  }
 
-    /* Main Content (Right Column) - Scrollable */
-    .main-content {
-      margin-left: 300px; /* MUST be the same as the sidebar's width */
-      padding: 40px;
-    }
+  /* Main Content (Right Column) - Scrollable */
+  .main-content {
+    margin-left: 300px;
+    padding: 40px;
+  }
 
-    /* --- Sidebar Element Styling --- */
+  /* --- Sidebar Element Styling --- */
 
-    .profile-image {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 3px solid #ffffff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 
-    .sidebar h2 {
-      margin: 10px 0;
+  .sidebar h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .sidebar .social-links a {
+    color: #0057b7;
+    font-size: 28px;
+    margin: 0 2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .sidebar .social-links a:hover {
+    color: #003366;
+  }
+
+  .sidebar .social-links .youtube-link {
+    color: #FF0000;
+  }
+
+  .sidebar .social-links .youtube-link:hover {
+    color: #c4302b;
+  }
+
+  .sidebar nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+
+  .sidebar nav a:hover {
+    color: #0057b7;
+  }
+
+  /* --- Main Content Element Styling --- */
+
+  .main-content h1 {
+    color: #0057b7;
+    font-size: 36px;
+  }
+
+  .main-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  /* Default h2 style (will be overridden by .education-entry h2) */
+  .main-content h2 {
+    font-size: 28px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .tech-icons i {
       font-size: 24px;
-      color: #333;
+      margin-right: 10px;
+      color: #0057b7;
+  }
+  
+  /* === Education Section Styling START === */
+  .education-entry {
+    margin-top: 30px; /* Add space above each entry */
+  }
+
+  /* This overrides the default h2 style ONLY for education entries */
+  .education-entry h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border-bottom: none; /* IMPORTANT: Removes the long line */
+    padding-bottom: 0;
+  }
+
+  /* This styles the p tags *inside* the education-details div */
+  .education-details > p {
+    margin: 0 0 5px 0; /* Tighter spacing for details */
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .education-details .degree-info {
+    font-size: 18px;
+    color: #444;
+  }
+
+  .education-details .dates {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+
+  .education-details .honors {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    padding-left: 10px;
+    border-left: 3px solid #0057b7; /* Blue accent line */
+  }
+  /* === Education Section Styling END === */
+
+
+  /* --- Responsive Design for Mobile --- */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-content {
+      margin-left: 0;
+      padding: 20px;
     }
     
-    .sidebar .social-links a {
-      color: #0057b7;
-      font-size: 28px;
-      margin: 0 2px;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    /* Center the nested lists on mobile */
+    .presentation-category {
+      text-align: left;
     }
+  }
 
-    .sidebar .social-links a:hover {
-      color: #003366;
-    }
+  .main-content section {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
 
-    .sidebar .social-links .youtube-link {
-      color: #FF0000;
-    }
+  .main-content section:last-of-type {
+      border-bottom: none;
+  }
 
-    .sidebar .social-links .youtube-link:hover {
-      color: #c4302b;
-    }
+  /* --- Presentation List Styling (for nested lists) --- */
+  .presentation-category {
+    margin-top: 25px; /* Add space between nested items */
+  }
+  
+  .presentation-category h3 {
+    font-size: 22px;
+    color: #1E90FF;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
 
-    .sidebar nav {
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-    }
+  .paper-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
 
-    .sidebar nav a {
-      color: #333;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 18px;
-      padding: 10px 0;
-      transition: color 0.3s ease;
-    }
+  .paper-entry {
+    margin-bottom: 25px;
+  }
 
-    .sidebar nav a:hover {
-      color: #0057b7;
-    }
+  .paper-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+  }
 
-    /* --- Main Content Element Styling --- */
+  .paper-entry .paper-citation, 
+  .paper-entry .paper-location {
+    margin-top: 0;
+    margin-bottom: 5px; /* Added a bit of space */
+    font-size: 14px;
+    color: #555;
+  }
 
-    .main-content h1 {
-      color: #0057b7;
-      font-size: 36px;
-    }
+  /* --- Toggle Link Style --- */
+  .toggle-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0057b7;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+  }
+  
+  /* This targets the main "Show Details" toggles */
+  .education-details > .toggle-link {
+    margin-top: 15px;
+  }
+  
+  /* This targets the nested "Show Courses" toggle */
+  .presentation-category .toggle-link {
+      margin-top: 10px; 
+  }
 
-    .main-content p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #444;
-    }
+  .toggle-link:hover {
+    color: #003366;
+  }
 
-    .footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      font-size: 14px;
-      color: #888;
-    }
-    
-    .tech-icons i {
-        font-size: 24px;
-        margin-right: 10px;
-        color: #0057b7;
-    }
+  /* Style for the arrow icon */
+  .toggle-arrow {
+    font-size: 14px;
+    margin-right: 8px;
+    transition: transform 0.3s ease-out;
+  }
 
+  /* This class will be added by JS to rotate the arrow */
+  .toggle-arrow.open {
+    transform: rotate(90deg);
+  }
 
-    /* --- Responsive Design for Mobile --- */
-    /* On screens 768px or less, the layout becomes a single column */
-    @media (max-width: 768px) {
-      .sidebar {
-        position: static; /* Remove fixed positioning */
-        width: 100%;     /* Take up full width */
-        height: auto;    /* Height becomes automatic */
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-      }
+  /* --- Collapsible Content Styling --- */
+  .collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: 0;
+  }
 
-      .main-content {
-        margin-left: 0; /* Remove the margin */
-        padding: 20px;
-      }
-    }
+  /* Rule for the scrolling course list box */
+  .collapsible-content.show.scroll-box {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    transition: max-height 0.5s ease-in;
+    border: 1px solid #eee;
+    padding: 10px;
+  }
 
-    .main-content section {
-      margin-bottom: 40px; /* Adds space between sections */
-      padding-bottom: 20px; /* Adds a bit of padding */
-      border-bottom: 1px solid #eee; /* A subtle line to separate sections */
-    }
+  /* General rule for main toggles */
+  .collapsible-content.show {
+    max-height: 2000px;
+    margin-top: 20px;
+    transition: max-height 0.5s ease-in;
+  }
+  
+  /* === NEW: Project Figure Thumbnails === */
+  .project-figures {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
 
-    .main-content section:last-of-type {
-        border-bottom: none; /* Removes the line after the last section */
-    }
+  .figure-thumb {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
-    /* --- Presentation List Styling --- */
-    .presentation-category h3 {
-      font-size: 22px; /* Makes 'Lab Seminar' larger */
-      color: #333;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
+  .figure-thumb:hover {
+    border-color: #0057b7;
+    transform: scale(1.05);
+  }
 
-    .paper-list {
-      list-style-type: none; /* Removes the bullet points from the list */
-      padding-left: 0;
-    }
+  /* === NEW: Modal Lightbox Styles === */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding-top: 60px;
+  }
 
-    .paper-entry {
-      margin-bottom: 25px; /* Adds space between different paper entries */
-    }
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+  }
+  
+  .modal-caption {
+    margin: 10px auto 0;
+    display: block;
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    font-size: 16px;
+  }
 
-    .paper-title {
-      font-size: 18px;
-      margin-bottom: 5px; /* Reduces the gap below the title */
-      color: #333;
-    }
+  .modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
 
-    .paper-entry .paper-citation, 
-    .paper-entry .paper-location {
-      margin-top: 0;
-      margin-bottom: 1px;
-      font-size: 14px;
-      color: #555;
-    }
+  .modal-close:hover,
+  .modal-close:focus {
+    color: #bbb;
+    text-decoration: none;
+  }
+  
+  /* Simple animation for modal open */
+  .modal-content, .modal-caption {
+    animation-name: zoom;
+    animation-duration: 0.3s;
+  }
+
+  @keyframes zoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+  }
+
   </style>
 </head>
 <body>
@@ -206,94 +413,354 @@
     
     <nav id="sidebar-nav">
       <a href="#home" class="sidebar-link">Home</a>
-      <a href="#presentations" class="sidebar-link">Oral Presentations</a>
-      <a href="#undergraduate" class="sidebar-link">Undergraduate</a>
+      <a href="#education" class="sidebar-link">Education</a>
     </nav>
   </aside>
 
   <main class="main-content">
 
-    <section id="home">
+    <section id="home"> 
       <h1>Hello, I'm Minguhn Kim 👋</h1>
       <p>
-        I'm an interdisciplinary man who is not afraid to learn new things and enjoys challenges.
-        My interests span from hardware to software, and also music. <i class="fa-solid fa-music"></i>
+        I'm an interdisciplinary man who is not afraid to learn new things.
+        My interests span from hardware to software, and also music.
       </p>
       <p>
         My approach to research combines two worlds:
         a deep understanding of why circuits work, and the expertise to build tools that define how they are designed.
         Grounded in device physics and analog circuit theory, I develop sophisticated algorithms to discover optimal solutions and maximize the performance of circuit designs.
       </p>
-      <!-- <p>
-        My goal isn't just to design a single circuit,
-        but to create the automated methodologies that empower the design of countless others,
-        ultimately pioneering the next generation of hardware for the music and audio industry. <i class="fa-solid fa-music"></i>          
-      </p> -->
     </section>
 
-    <section id="presentations">
-      <h1>Oral Presentations</h1>
+    <section id="education">
+      <h1>Education</h1>
+      
+      <div class="education-entry">
+        <div class="education-details">
+          <h2>Pohang University of Science and Technology</h2>
+          <p class="degree-info">Master of Science - MS, Semiconductor Technology</p>
+          <p class="dates">Feb 2025 - Feb 2027 (Expected)</p>
+          <p class="honors">Entrance Scholarship</p>
 
-      <div class="presentation-category">
-        <h3>Lab Seminar</h3>
-        <ul class="paper-list">
+          <a class="toggle-link" id="postech-toggle-btn">
+            <i class="fa-solid fa-chevron-right toggle-arrow"></i>
+            <span>Show Details</span>
+          </a>
+          <div class="collapsible-content" id="postech-details">
+
+            <div class="presentation-category">
+              <h3>Research</h3>
+              <ul class="paper-list">
+                <li class="paper-entry">
+                  <h4 class="paper-title">Analog Circuit Optimization</h4>
+                  <p class="paper-location">In progress</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="presentation-category">
+              <h3>Projects</h3>
+              <ul class="paper-list">
+                <li class="paper-entry">
+                  <h4 class="paper-title">Design Automation of Display Source Driver Circuits</h4>
+                  <p class="paper-location">Samsung Electronics</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="presentation-category">
+              <h3>Lab Seminar</h3>
+              <ul class="paper-list">
+                <li class="paper-entry">
+                  <h4 class="paper-title">ML-Based Fast and Accurate Performance Modeling and Prediction for High-Speed Memory Interfaces across Different Technologies</h4>
+                  <p class="paper-citation"><em>Taehoon Kim et al., in DATE, 2025</em></p>
+                  <p class="paper-location">LG Cooperative Electronics Engineering Building, Pohang, July 14, 2025</p>
+                </li>
+              </ul>
+            </div>
+          </div> </div> </div> <div class="education-entry">
+        <div class="education-details">
+          <h2>Chung-Ang University</h2>
+          <p class="degree-info">Bachelor of Engineering - BE, Electrical and Electronics Engineering</p>
+          <p class="dates">Mar 2019 - Feb 2025</p>
+          <p class="honors">Summa Cum Laude</p>
           
-          <li class="paper-entry">
-            <h4 class="paper-title">ML-Based Fast and Accurate Performance Modeling and Prediction for High-Speed Memory Interfaces across Different Technologies</h4>
-            <p class="paper-citation"><em>Taehoon Kim et al., in DATE, 2025</em></p>
-            <p class="paper-location">LG Cooperative Electronics Engineering Building, Pohang, July 14, 2025</p>
-          </li>
+          <a class="toggle-link" id="cau-toggle-btn">
+            <i class="fa-solid fa-chevron-right toggle-arrow"></i>
+            <span>Show Details</span>
+          </a>
+          <div class="collapsible-content" id="cau-details">
 
-          </ul>
-      </div>
-    </section>
+            <div class="presentation-category">
+              <h3>Courses</h3>
+              <a class="toggle-link" id="course-toggle-btn">
+                <i class="fa-solid fa-chevron-right toggle-arrow"></i>
+                <span>Show Attended Courses</span>
+              </a>
+              
+              <div class="collapsible-content scroll-box" id="course-list">
 
-        <section id="undergraduate">
-      <h1>Undergraduate</h1>
+                <div class="presentation-category">
+                  <h3>2019 - 1st Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">The World of Music and Appreciation</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Computational Thinking and Problem Solving</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Accounting in the Age of Entrepreneurship</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Creativity and Communication</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">ENGLISH WRITING (1)</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">General Mathematics</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Introduction to Creative ICT Engineering Design</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2019 - 2nd Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">COMMUNICATION IN ENGLISH</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">The Science of Sex</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Korean Writing</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Philosophy of Happiness</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">What is History?</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Human Behavior and Psychology</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Korean History</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Organic Chemistry</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2019 - Winter Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">General Physics Experiment (1)</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2021 - Winter Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Calculus (2)</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2022 - 1st Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Linear Algebra</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">General Physics (1)</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Circuit Theory</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Electrical Mathematics</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Random Variables</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2022 - 2nd Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Life Science in Daily Life</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Logic Circuits</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">General Physics (2)</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Chemistry</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">General Physics Experiment (2)</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Basic Electronic Circuits</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Circuits and Systems</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Object-Oriented Programming</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Electric Circuit Design Experiment</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2022 - Winter Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">ACT</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Semiconductor Engineering</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2023 - 1st Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Design Thinking for Problem Solving in the AI Era</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Electronic Circuits</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Electromagnetics</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Physical Electronics</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Electronic Circuit Design Experiment</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Signals and Systems</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Microcomputer Systems</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2023 - 2nd Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Automatic Control</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Analog and Digital Circuit Design Experiment</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Electromagnetic Fields</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">ASIC Design</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Communication Engineering</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Operating Systems</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2023 - Winter Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Undergraduate Research Intern A (@ POSTECH MADs)</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2024 - 1st Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Circuit Design for Wearable Devices</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Microprocessor Application Circuit Design Experiment</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Memory & SoC Design</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Semiconductor Device Principles and Applications</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Power Electronics</h4></li>
+                  </ul>
+                </div>
+                <div class="presentation-category">
+                  <h3>2024 - 2nd Semester</h3>
+                  <ul class="paper-list">
+                    <li class="paper-entry"><h4 class="paper-title">Well-Being Science in Hazardous Society</h4></li>
+                    <li class="paper-entry"><h4 class="paper-title">Capstone Design (Automatic Gain Control Amplifier, Dean's Award)</h4></li>
+                  </ul>
+                </div>
 
-      <div class="presentation-category">
-        <h3>Projects</h3>
-        <ul class="paper-list">
-          
-          <li class="paper-entry">
-            <h4 class="paper-title">Automatic Gain Control Amplifier</h4>
-            <p class="paper-citation"><em>Designed Automatic Gain Control Amplifier as a three members team.</em></p>
-            <p class="paper-location">Add more details about the project here. You can remove the citation or location paragraphs if not needed.</p>
-          </li>
+              </div>
+            </div>
 
-          <li class="paper-entry">
-            <h4 class="paper-title">Another Project Title</h4>
-            <p class="paper-citation"><em>Example: C++, Python, Audio Signal Processing</em></p>
-            <p class="paper-location">This project involved creating a real-time audio effect processor...</p>
-          </li>
+            <div class="presentation-category">
+              <h3>Awards</h3>
+              <ul class="paper-list">
+                <li class="paper-entry">
+                  <h4 class="paper-title">Dean's Award (College of ICT Engineering)</h4>
+                  <p class="paper-location">Chung-Ang University, 2024 CAU Engineering Academic Festival, Dec 2024</p>
+                  
+                  <p class="paper-citation">Our team, "Circuit Emperor," designed and presented an Automatic Gain Control (AGC) amplifier. Below are some key figures from the project.</p>
+                  
+                  <div class="project-figures">
+                    <img src="agc_poster.png" 
+                         alt="AGC Poster" 
+                         class="figure-thumb"
+                         data-img-large="agc_poster_large.png" 
+                         data-caption="Figure 1: The Poster of AGC Amplifier.">
 
-        </ul>
-      </div>
+                    <img src="agc_block_diagram_thumb.png"
+                         alt="AGC Block Diagram" 
+                         class="figure-thumb" 
+                         data-img-large="agc_block_diagram_large.png" 
+                         data-caption="Figure 2: High-level block diagram of the AGC.">
+                         
+                    <img src="agc_simulation_thumb.jpg" 
+                         alt="AGC Simulation Results" 
+                         class="figure-thumb" 
+                         data-img-large="agc_simulation_large.jpg" 
+                         data-caption="Figure 3: Transient simulation results showing gain adjustment.">
+                  </div>
+                  
+                </li>
+              </ul>
+            </div>
 
-      <div class="presentation-category">
-        <h3>Awards</h3>
-        <ul class="paper-list">
-          
-          <li class="paper-entry">
-            <h4 class="paper-title">Name of the Award or Honor</h4>
-            <p class="paper-location">Institution or Organization, Year</p>
-          </li>
+            <div class="presentation-category">
+              <h3>Experiences</h3>
+              <ul class="paper-list">
+                <li class="paper-entry">
+                  <h4 class="paper-title">Clubs</h4>
+                  <p class="paper-location">Band, Running, Crossfit, Christianity, Academic.</p>
+                  <h4 class="paper-title">Book Festival</h4>
+                  <p class="paper-location">Stolen Focus, EBS Capitalism, The Merry Recluse.</p>
+                  <h4 class="paper-title">Challenges</h4>                                   
+                  <p class="paper-location">CAU-Doosan Infrastructure Cooperation Center Capstone Design (CDIC)</p>
+                  <!-- <p class="paper-location"></p> -->
+                </li>
+              </ul>
+            </div>
 
-          <li class="paper-entry">
-            <h4 class="paper-title">Another Award (e.g., Dean's List)</h4>
-            <p class="paper-location">University Name, Semester/Year</p>
-          </li>
 
-        </ul>
-      </div>
-
-    </section>
-
-    <div class="footer">
+            </div> </div> </div> </section> <div class="footer">
       &copy; 2025 Minguhn Kim
     </div>
 
   </main>
+  
+  <div class="modal" id="myModal">
+    <span class="modal-close" id="modalCloseBtn">&times;</span>
+    <img class="modal-content" id="modalImg" src="" alt="Project Figure">
+    <div class="modal-caption" id="modalCaption"></div>
+  </div>
 
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      
+      // --- Helper Function to create a toggle ---
+      function createToggle(btnId, contentId, showText, hideText) {
+        const toggleBtn = document.getElementById(btnId);
+        const content = document.getElementById(contentId);
+
+        if (toggleBtn && content) {
+          const arrowIcon = toggleBtn.querySelector(".toggle-arrow");
+          const linkText = toggleBtn.querySelector("span");
+
+          toggleBtn.addEventListener("click", function() {
+            content.classList.toggle("show");
+            arrowIcon.classList.toggle("open");
+            if (content.classList.contains("show")) {
+              linkText.textContent = hideText;
+            } else {
+              linkText.textContent = showText;
+            }
+          });
+        }
+      }
+
+      // --- 1. Setup the POSTECH Toggle ---
+      createToggle(
+        "postech-toggle-btn", 
+        "postech-details", 
+        "Show Details", 
+        "Hide Details"
+      );
+
+      // --- 2. Setup the CHUNG-ANG Toggle ---
+      createToggle(
+        "cau-toggle-btn", 
+        "cau-details", 
+        "Show Details", 
+        "Hide Details"
+      );
+
+      // --- 3. Setup the COURSES Toggle (inside Chung-Ang) ---
+      createToggle(
+        "course-toggle-btn", 
+        "course-list", 
+        "Show Attended Courses", 
+        "Hide Attended Courses"
+      );
+
+      // --- 4. Setup the Modal Lightbox Logic ---
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("modalImg");
+      const modalCaption = document.getElementById("modalCaption");
+      const closeBtn = document.getElementById("modalCloseBtn");
+
+      // Get all thumbnail images
+      const thumbnails = document.querySelectorAll(".figure-thumb");
+
+      // Loop through all thumbnails and add click listener
+      thumbnails.forEach(thumb => {
+        thumb.addEventListener("click", function() {
+          modal.style.display = "block";
+          modalImg.src = this.dataset.imgLarge;
+          modalCaption.textContent = this.dataset.caption;
+        });
+      });
+
+      // Add click listener to the close button
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function() {
+          modal.style.display = "none";
+        });
+      }
+      
+      // Optional: Close modal when clicking on the background
+      window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+
+    });
+  </script>
 </body>
 </html>
