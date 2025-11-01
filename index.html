@@ -114,7 +114,7 @@
     color: #444;
   }
 
-  /* Default h2 style (will be overridden by .education-entry h2) */
+  /* Default h2 style (will be overridden) */
   .main-content h2 {
     font-size: 28px;
     color: #333;
@@ -138,24 +138,22 @@
       color: #0057b7;
   }
   
-  /* === Education Section Styling START === */
+  /* === Education Section Styling === */
   .education-entry {
-    margin-top: 30px; /* Add space above each entry */
+    margin-top: 30px; 
   }
 
-  /* This overrides the default h2 style ONLY for education entries */
   .education-entry h2 {
     font-size: 24px;
     color: #333;
     margin-top: 0;
     margin-bottom: 5px;
-    border-bottom: none; /* IMPORTANT: Removes the long line */
+    border-bottom: none;
     padding-bottom: 0;
   }
 
-  /* This styles the p tags *inside* the education-details div */
   .education-details > p {
-    margin: 0 0 5px 0; /* Tighter spacing for details */
+    margin: 0 0 5px 0; 
     font-size: 16px;
     line-height: 1.5;
   }
@@ -176,10 +174,52 @@
     color: #333;
     margin-top: 15px;
     padding-left: 10px;
-    border-left: 3px solid #0057b7; /* Blue accent line */
+    border-left: 3px solid #0057b7; 
   }
-  /* === Education Section Styling END === */
-
+  
+  /* === NEW: Experience Section Styling === */
+  .experience-entry {
+    margin-top: 30px; 
+  }
+  
+  .experience-entry h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .experience-details {
+    flex: 1;
+  }
+  
+  .experience-details > p {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .experience-details .role-title {
+    font-size: 18px;
+    color: #444;
+  }
+  
+  .experience-details .dates {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .experience-details .description {
+    font-size: 16px;
+    color: #333;
+    margin-top: 15px;
+    padding-left: 10px;
+    border-left: 3px solid #0057b7; 
+  }
+  /* === NEW: Experience Section Styling END === */
 
   /* --- Responsive Design for Mobile --- */
   @media (max-width: 768px) {
@@ -196,7 +236,6 @@
       padding: 20px;
     }
     
-    /* Center the nested lists on mobile */
     .presentation-category {
       text-align: left;
     }
@@ -214,12 +253,12 @@
 
   /* --- Presentation List Styling (for nested lists) --- */
   .presentation-category {
-    margin-top: 25px; /* Add space between nested items */
+    margin-top: 25px; 
   }
   
   .presentation-category h3 {
     font-size: 22px;
-    color: #1E90FF;
+    color: #1E90FF; /* DodgerBlue */
     border-bottom: 2px solid #eee;
     padding-bottom: 5px;
     margin-bottom: 15px;
@@ -243,7 +282,7 @@
   .paper-entry .paper-citation, 
   .paper-entry .paper-location {
     margin-top: 0;
-    margin-bottom: 5px; /* Added a bit of space */
+    margin-bottom: 5px;
     font-size: 14px;
     color: #555;
   }
@@ -260,12 +299,10 @@
     transition: color 0.3s ease;
   }
   
-  /* This targets the main "Show Details" toggles */
   .education-details > .toggle-link {
     margin-top: 15px;
   }
   
-  /* This targets the nested "Show Courses" toggle */
   .presentation-category .toggle-link {
       margin-top: 10px; 
   }
@@ -274,14 +311,12 @@
     color: #003366;
   }
 
-  /* Style for the arrow icon */
   .toggle-arrow {
     font-size: 14px;
     margin-right: 8px;
     transition: transform 0.3s ease-out;
   }
 
-  /* This class will be added by JS to rotate the arrow */
   .toggle-arrow.open {
     transform: rotate(90deg);
   }
@@ -294,7 +329,6 @@
     margin-top: 0;
   }
 
-  /* Rule for the scrolling course list box */
   .collapsible-content.show.scroll-box {
     max-height: 400px;
     overflow-y: auto;
@@ -304,14 +338,13 @@
     padding: 10px;
   }
 
-  /* General rule for main toggles */
   .collapsible-content.show {
     max-height: 2000px;
     margin-top: 20px;
     transition: max-height 0.5s ease-in;
   }
   
-  /* === NEW: Project Figure Thumbnails === */
+  /* --- Project Figure Thumbnails --- */
   .project-figures {
     margin-top: 15px;
     display: flex;
@@ -334,9 +367,9 @@
     transform: scale(1.05);
   }
 
-  /* === NEW: Modal Lightbox Styles === */
+  /* --- Modal Lightbox Styles --- */
   .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -414,6 +447,7 @@
     <nav id="sidebar-nav">
       <a href="#home" class="sidebar-link">Home</a>
       <a href="#education" class="sidebar-link">Education</a>
+      <a href="#experience" class="sidebar-link">Experience</a>
     </nav>
   </aside>
 
@@ -615,10 +649,7 @@
                   </ul>
                 </div>
 
-              </div>
-            </div>
-
-            <div class="presentation-category">
+              </div> </div> <div class="presentation-category">
               <h3>Awards</h3>
               <ul class="paper-list">
                 <li class="paper-entry">
@@ -649,9 +680,7 @@
                   
                 </li>
               </ul>
-            </div>
-
-            <div class="presentation-category">
+            </div> <div class="presentation-category">
               <h3>Experiences</h3>
               <ul class="paper-list">
                 <li class="paper-entry">
@@ -659,15 +688,27 @@
                   <p class="paper-location">Band, Running, Crossfit, Christianity, Academic.</p>
                   <h4 class="paper-title">Book Festival</h4>
                   <p class="paper-location">Stolen Focus, EBS Capitalism, The Merry Recluse.</p>
-                  <h4 class="paper-title">Challenges</h4>                                   
+                  <h4 class="paper-title">Challenges</h4> 
                   <p class="paper-location">CAU-Doosan Infrastructure Cooperation Center Capstone Design (CDIC)</p>
-                  <!-- <p class="paper-location"></p> -->
                 </li>
               </ul>
-            </div>
-
-
-            </div> </div> </div> </section> <div class="footer">
+            </div> </div> </div> </div> </section> <section id="experience">
+      <h1>Experience</h1>
+      
+      <div class="experience-entry">
+        <div class="experience-details">
+          <h2>Lab Name (e.g., POSTECH MADs Lab)</h2>
+          <p class="role-title">Research Intern</p>
+          <p class="dates">Dec 2023 - Feb 2024</p>
+          <p class="description">
+            This is where you describe what you did during your internship. 
+            Mention the skills you used, the project you worked on, and what you learned.
+          </p>
+        </div>
+      </div>
+      
+    </section>
+    <div class="footer">
       &copy; 2025 Minguhn Kim
     </div>
 
