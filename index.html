@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ming | Semiconductor Engineer</title>
+  <title>Ming | AI & Semiconductor Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   s
   <style>
@@ -83,6 +83,14 @@
     color: #c4302b;
   }
 
+  .sidebar .social-links .github-link {
+    color: #000000;
+  }
+
+  .sidebar .social-links .github-link:hover {
+    color: #555555;
+  }
+
   .sidebar nav {
     margin-top: 30px;
     display: flex;
@@ -124,6 +132,17 @@
   .main-content h1 {
     color: #0057b7;
     font-size: 36px;
+  }
+
+  .hero-title {
+    color: #1a1a1a !important;
+  }
+
+  .hero-title .highlight {
+    background-color: #1a1a1a;
+    color: #ffeb3b;
+    padding: 2px 12px;
+    border-radius: 4px;
   }
 
   .main-content p {
@@ -470,16 +489,20 @@
         <i class="fa-brands fa-linkedin"></i>
       </a>
 
-      <a href="https://www.youtube.com/@mingmingart00" class="youtube-link" target="_blank" rel="noopener noreferrer" title="My Youtube Channel">
-        <i class="fa-brands fa-youtube"></i>
+      <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
+        <i class="fa-brands fa-github"></i>
       </a>
+
+      <!-- <a href="https://www.youtube.com/@mingmingart00" class="youtube-link" target="_blank" rel="noopener noreferrer" title="My Youtube Channel">
+        <i class="fa-brands fa-youtube"></i>
+      </a> -->
     </div>
     
     <nav id="sidebar-nav">
       <a href="#home" class="sidebar-link">Home</a>
       <a href="#education" class="sidebar-link">Educations</a>
       <a href="#experiences" class="sidebar-link">Experiences</a>
-      <a href="#writings" class="sidebar-link">Writings</a>
+      <!-- <a href="./writings.html" class="sidebar-link">Writings</a> -->
     </nav>
 
     <a href="./CV.pdf" target="_blank" class="cv-btn">
@@ -490,7 +513,7 @@
   <main class="main-content">
 
     <section id="home"> 
-      <h1>Hello, I'm Ming (Minguhn Kim) 👋</h1>
+      <h1 class="hero-title">Hello, I'm <span class="highlight">Ming (Minguhn Kim)</span> 👋</h1>
       <p>
         I'm a man with interdisciplinary interests who enjoys learning new things.
         My interests span from hardware to software, and also music.
@@ -515,44 +538,35 @@
           <p class="dates">Feb 2025 - Feb 2027 (Expected)</p>
           <p class="honors">Entrance Scholarship</p>
 
-          <a class="toggle-link" id="postech-toggle-btn">
-            <i class="fa-solid fa-chevron-right toggle-arrow"></i>
-            <span>Show Details</span>
-          </a>
-          <div class="collapsible-content" id="postech-details">
+          <div class="presentation-category">
+            <h3>Research Topic</h3>
+            <ul class="paper-list">
+              <li class="paper-entry">
+                <h4 class="paper-title">AI-driven Analog Circuit Design Automation</h4>
+              </li>
+            </ul>
+          </div>
 
-            <div class="presentation-category">
-              <h3>Research</h3>
-              <ul class="paper-list">
-                <li class="paper-entry">
-                  <h4 class="paper-title">Analog Circuit Optimization</h4>
-                  <p class="paper-location">Jul 2025 ~</p>
-                </li>
-              </ul>
-            </div>
+          <div class="presentation-category">
+            <h3>Project</h3>
+            <ul class="paper-list">
+              <li class="paper-entry">
+                <h4 class="paper-title">Design Automation of Display Source Driver Circuits</h4>
+                <p class="paper-location">Samsung Electronics</p>
+              </li>
+            </ul>
+          </div>
 
-            <div class="presentation-category">
-              <h3>Projects</h3>
-              <ul class="paper-list">
-                <li class="paper-entry">
-                  <h4 class="paper-title">Design Automation of Display Source Driver Circuits</h4>
-                  <p class="paper-location">Samsung Electronics<br>
-                    Oct 2025 ~ Dec 2025</p>
-                </li>
-              </ul>
-            </div>
-
-            <!-- <div class="presentation-category">
-              <h3>Lab Seminar</h3>
-              <ul class="paper-list">
-                <li class="paper-entry">
-                  <h4 class="paper-title">ML-Based Fast and Accurate Performance Modeling and Prediction for High-Speed Memory Interfaces across Different Technologies</h4>
-                  <p class="paper-citation"><em>Taehoon Kim et al., in DATE, 2025</em></p>
-                  <p class="paper-location">LG Cooperative Electronics Engineering Building, Pohang, July 14, 2025</p>
-                </li>
-              </ul>
-            </div> -->
-          </div><div class="education-entry">
+          <!-- <div class="presentation-category">
+            <h3>Lab Seminar</h3>
+            <ul class="paper-list">
+              <li class="paper-entry">
+                <h4 class="paper-title">ML-Based Fast and Accurate Performance Modeling and Prediction for High-Speed Memory Interfaces across Different Technologies</h4>
+                <p class="paper-citation"><em>Taehoon Kim et al., in DATE, 2025</em></p>
+                <p class="paper-location">LG Cooperative Electronics Engineering Building, Pohang, July 14, 2025</p>
+              </li>
+            </ul>
+          </div> --><div class="education-entry">
         
         <div class="education-details">
           <h2>Chung-Ang University</h2>
@@ -725,7 +739,7 @@
                 </li>
               </ul>
             </div> <div class="presentation-category">
-              <h3>Experiences</h3>
+              <!-- <h3>Experiences</h3>
               <ul class="paper-list">
                 <li class="paper-entry">
                   <h4 class="paper-title">Clubs</h4>
@@ -735,7 +749,7 @@
                   <h4 class="paper-title">Challenges</h4> 
                   <p class="paper-location">CAU-Doosan Infrastructure Cooperation Center Capstone Design (CDIC)</p>
                 </li>
-              </ul>
+              </ul> -->
     </section>
       
     <section id="experiences">
@@ -775,12 +789,6 @@
 
     </section>
  
-    <section id="writings">
-      <h1>Writings</h1>
-
-      <p>Coming soon...</p>
-    </section>
-
     <div class="footer">
       &copy; 2025 Minguhn Kim
     </div>
@@ -818,23 +826,15 @@
         }
       }
 
-      // --- 1. Setup the POSTECH Toggle ---
+      // --- 1. Setup the CHUNG-ANG Toggle ---
       createToggle(
-        "postech-toggle-btn", 
-        "postech-details", 
-        "Show Details", 
+        "cau-toggle-btn",
+        "cau-details",
+        "Show Details",
         "Hide Details"
       );
 
-      // --- 2. Setup the CHUNG-ANG Toggle ---
-      createToggle(
-        "cau-toggle-btn", 
-        "cau-details", 
-        "Show Details", 
-        "Hide Details"
-      );
-
-      // --- 3. Setup the COURSES Toggle (inside Chung-Ang) ---
+      // --- 2. Setup the COURSES Toggle (inside Chung-Ang) ---
       createToggle(
         "course-toggle-btn", 
         "course-list", 

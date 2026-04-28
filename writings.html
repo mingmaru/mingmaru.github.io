@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ming | Writings</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    scroll-behavior: smooth;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 30px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+  }
+
+  .main-content {
+    margin-left: 300px;
+    padding: 40px;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+  }
+
+  .sidebar .social-links a {
+    color: #0057b7;
+    font-size: 28px;
+    margin: 0 2px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .sidebar .social-links a:hover {
+    color: #003366;
+  }
+
+  .sidebar .social-links .youtube-link {
+    color: #FF0000;
+  }
+
+  .sidebar .social-links .youtube-link:hover {
+    color: #c4302b;
+  }
+
+  .sidebar .social-links .github-link {
+    color: #000000;
+  }
+
+  .sidebar .social-links .github-link:hover {
+    color: #555555;
+  }
+
+  .sidebar nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+
+  .sidebar nav a:hover {
+    color: #0057b7;
+  }
+
+  .cv-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 18px;
+    background-color: #0057b7;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+  .cv-btn:hover {
+    background-color: #003f8a;
+  }
+
+  .main-content h1 {
+    color: #0057b7;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #888;
+  }
+
+  /* --- Writings (Column-style Articles) --- */
+  .writings-list {
+    max-width: 760px;
+  }
+
+  .writing-entry {
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .writing-entry:last-child {
+    border-bottom: none;
+  }
+
+  .writing-title {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  .writing-date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 18px;
+  }
+
+  .writing-body {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #333;
+  }
+
+  .writing-body p {
+    margin: 0 0 16px 0;
+  }
+
+  /* --- Copy Protection --- */
+  .protected {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  .protected img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    pointer-events: none;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 768px) {
+    .sidebar {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .main-content {
+      margin-left: 0;
+      padding: 20px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <img src="./images/profile_image.webp" alt="Minguhn Kim Profile Picture" class="profile-image">
+    <h2>Ming</h2>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+
+    <nav id="sidebar-nav">
+      <a href="./index.html#home" class="sidebar-link">Home</a>
+      <a href="./index.html#education" class="sidebar-link">Educations</a>
+      <a href="./index.html#experiences" class="sidebar-link">Experiences</a>
+      <a href="./writings.html" class="sidebar-link">Writings</a>
+    </nav>
+
+    <a href="./CV.pdf" target="_blank" class="cv-btn">
+      <i class="fa-solid fa-file-arrow-down"></i> Download CV
+    </a>
+  </aside>
+
+  <main class="main-content">
+    <h1>Writings</h1>
+
+    <div class="writings-list protected">
+
+      <article class="writing-entry">
+        <h2 class="writing-title">First Column</h2>
+        <p class="writing-date">2026-04-28</p>
+        <div class="writing-body">
+          <p>여기에 첫 번째 글을 작성하세요. 단락은 &lt;p&gt; 태그로 감쌉니다.</p>
+          <p>새 글을 추가할 때는 이 &lt;article class="writing-entry"&gt; 블록을 복사해서 위에 붙여넣으면 최신 글이 맨 위에 오게 됩니다.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Minguhn Kim
+    </div>
+  </main>
+
+  <script>
+    (function() {
+      const protectedEl = document.querySelector('.protected');
+      if (!protectedEl) return;
+
+      protectedEl.addEventListener('copy', e => e.preventDefault());
+      protectedEl.addEventListener('cut', e => e.preventDefault());
+      protectedEl.addEventListener('contextmenu', e => e.preventDefault());
+      protectedEl.addEventListener('dragstart', e => e.preventDefault());
+      protectedEl.addEventListener('selectstart', e => e.preventDefault());
+    })();
+  </script>
+</body>
+</html>
