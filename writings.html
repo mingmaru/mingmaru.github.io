@@ -6,9 +6,7 @@
   <title>Ming | Writings</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
   html, body {
     margin: 0;
@@ -20,8 +18,7 @@
 
   .sidebar {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     width: 300px;
     height: 100vh;
     background-color: #ffffff;
@@ -34,11 +31,6 @@
     overflow-y: auto;
   }
 
-  .main-content {
-    margin-left: 300px;
-    padding: 40px;
-  }
-
   .profile-image {
     width: 150px;
     height: 150px;
@@ -46,83 +38,86 @@
     object-fit: cover;
     margin-bottom: 20px;
     border: 3px solid #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
 
-  .sidebar h2 {
-    margin: 10px 0;
-    font-size: 24px;
-    color: #333;
-  }
+  .sidebar h2 { margin: 10px 0; font-size: 24px; color: #333; }
 
   .sidebar .social-links a {
-    color: #0057b7;
-    font-size: 28px;
-    margin: 0 2px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: #0057b7; font-size: 28px; margin: 0 2px;
+    text-decoration: none; transition: color 0.3s ease;
   }
+  .sidebar .social-links a:hover { color: #003366; }
+  .sidebar .social-links .github-link { color: #000000; }
+  .sidebar .social-links .github-link:hover { color: #555555; }
 
-  .sidebar .social-links a:hover {
-    color: #003366;
-  }
-
-  .sidebar .social-links .youtube-link {
-    color: #FF0000;
-  }
-
-  .sidebar .social-links .youtube-link:hover {
-    color: #c4302b;
-  }
-
-  .sidebar .social-links .github-link {
-    color: #000000;
-  }
-
-  .sidebar .social-links .github-link:hover {
-    color: #555555;
-  }
-
-  .sidebar nav {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-
+  .sidebar nav { margin-top: 30px; display: flex; flex-direction: column; }
   .sidebar nav a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 10px 0;
-    transition: color 0.3s ease;
+    color: #333; text-decoration: none; font-weight: bold;
+    font-size: 18px; padding: 10px 0; transition: color 0.3s ease;
   }
-
-  .sidebar nav a:hover {
-    color: #0057b7;
-  }
+  .sidebar nav a:hover { color: #0057b7; }
 
   .cv-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 8px 18px;
-    background-color: #0057b7;
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: bold;
+    display: inline-block; margin-top: 20px; padding: 8px 18px;
+    background-color: #0057b7; color: #ffffff; text-decoration: none;
+    border-radius: 6px; font-size: 15px; font-weight: bold;
     transition: background-color 0.3s ease;
   }
+  .cv-btn:hover { background-color: #003f8a; }
 
-  .cv-btn:hover {
-    background-color: #003f8a;
+  .main-content {
+    margin-left: 300px;
+    padding: 40px 60px;
+    max-width: 1060px;
   }
 
   .main-content h1 {
     color: #0057b7;
     font-size: 36px;
     margin-bottom: 30px;
+  }
+
+  .writings-list { max-width: 720px; }
+
+  .writing-entry {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .writing-entry:last-child { border-bottom: none; }
+
+  .writing-entry a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .writing-entry a:hover .writing-title {
+    color: #0057b7;
+  }
+
+  .writing-title {
+    font-size: 24px;
+    color: #1a1a1a;
+    margin: 0 0 6px 0;
+    transition: color 0.2s ease;
+  }
+
+  .writing-date {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0 0 12px 0;
+  }
+
+  .writing-excerpt {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #555;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .footer {
@@ -133,100 +128,33 @@
     color: #888;
   }
 
-  /* --- Writings (Column-style Articles) --- */
-  .writings-list {
-    max-width: 760px;
-  }
-
-  .writing-entry {
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .writing-entry:last-child {
-    border-bottom: none;
-  }
-
-  .writing-title {
-    font-size: 26px;
-    color: #333;
-    margin-bottom: 6px;
-  }
-
-  .writing-date {
-    font-size: 14px;
-    color: #888;
-    margin-bottom: 18px;
-  }
-
-  .writing-body {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #333;
-    white-space: pre-line;
-  }
-
-  .writing-body p {
-    margin: 0 0 16px 0;
-  }
-
-  /* --- Copy Protection --- */
-  .protected {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-  }
-
-  .protected img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    pointer-events: none;
-  }
-
-  /* --- Responsive --- */
   @media (max-width: 768px) {
     .sidebar {
-      position: static;
-      width: 100%;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid #ddd;
+      position: static; width: 100%; height: auto;
+      border-right: none; border-bottom: 1px solid #ddd;
     }
-
-    .main-content {
-      margin-left: 0;
-      padding: 20px;
-    }
+    .main-content { margin-left: 0; padding: 20px; }
   }
   </style>
 </head>
 <body>
   <aside class="sidebar">
-    <img src="./images/profile_image.webp" alt="Minguhn Kim Profile Picture" class="profile-image">
+    <img src="./images/Profile_Image_Gemini_1_cropped.png" alt="Minguhn Kim Profile Picture" class="profile-image">
     <h2>Ming</h2>
-
     <div class="social-links">
       <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-
       <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
         <i class="fa-brands fa-github"></i>
       </a>
     </div>
-
-    <nav id="sidebar-nav">
-      <a href="./index.html#home" class="sidebar-link">Home</a>
-      <a href="./index.html#education" class="sidebar-link">Educations</a>
-      <a href="./index.html#experiences" class="sidebar-link">Experiences</a>
-      <a href="./writings.html" class="sidebar-link">Writings</a>
+    <nav>
+      <a href="./index.html#home">Home</a>
+      <a href="./index.html#education">Educations</a>
+      <a href="./index.html#experiences">Experiences</a>
+      <a href="./writings.html">Writings</a>
     </nav>
-
     <a href="./CV.pdf" target="_blank" class="cv-btn">
       <i class="fa-solid fa-file-arrow-down"></i> Download CV
     </a>
@@ -235,46 +163,35 @@
   <main class="main-content">
     <h1>Writings</h1>
 
-    <div class="writings-list protected">
+    <div class="writings-list">
 
       <article class="writing-entry">
-        <h2 class="writing-title">대기업에 가면 인생이 "大"인가?</h2>
-        <p class="writing-date">2026-04-30</p>
-        <div class="writing-body">
-          <p>대기업 인적성 시험을 준비하면서, 영혼이 공허해진 느낌이었다. GSAT이라는 삼성직무적합성평가 시험은, IQ 테스트 성격을 띠는데 요령 터득이 중요하다. '왜 이런 시험을 쳐야 하지?'하는 생각이 머릿속을 떠나지 않았는데, 내 성능을 기업에 입증하여 쓸모를 증명하기 위한 그 과정이 참으로 비인간적으로 느껴졌다. 그 관문을 통과한다면 높은 연봉, 경쟁력 있는 동료들, 좋은 인프라, 막대한 자본에서 비롯되는 영향력 등을 얻고 경험할 수 있을 것이다.</p>
-        </div>
+        <a href="./writings/what-am-I.html">
+          <h2 class="writing-title">나는 뭘까</h2>
+          <p class="writing-date">2026-05-05</p>
+          <p class="writing-excerpt">나는 뭘까</p>
+        </a>
       </article>
 
       <article class="writing-entry">
-        <h2 class="writing-title">내가 하고 싶은 일</h2>
-        <p class="writing-date">2026-04-30</p>
-        <div class="writing-body">
-          <p>자기가 하고 싶은 일은 단번에 찾아내어 그 길로 황소처럼 달려가는 사람이 있는 반면, 아무리 자기 내면을 들여다보아도 나 자신의 소리가 들리지 않는 경우도 있다. 반지의 제왕 대사인 "Not all those who wander are lost"를 아는가? 인생길에서 방황해도, 모두가 길을 잃은 것은 아니라는 것이다. 내가 하고 싶은 일은 무엇일까? 나는 무엇을 하면서 살고 싶을까? 나는 어떤 사람으로 기억되고 싶을까? 이런 질문들은 내가 하고 싶은 일을 찾는 데 도움이 될 수 있다. 하지만 답이 쉽게 나오지 않는다면, 일단 다양한 경험을 해보는 수밖에. 여러 가지 일을 시도해보고, 그 과정에서 내가 좋아하는 것과 싫어하는 것을 알아가는 것이다. 그렇게 하다 보면, 내가 하고 싶은 일이 조금씩 명확해질 것이다.</p>
-          <p>하지만 본인이 충분한 부딪혀보면서 많은 경험을 했다고 생각하는데도 아직 하고 싶은 일을 발견하지 못해 마음이 계속해서 조급해지는 사람들도 있을 것이다. 나이가 차고 현실적인 문제(주로 돈)에 직면하면서, 돈은 벌어야겠고, 그러려면 잘하는 일을 해야 하는데, 어떤 일을 잘하게 되려면(타고난 재능의 영향도 있지만) 열정이 받쳐주고, 그 열정과 일을 잘하게 됨이 서로 양성 피드백을 만들면서 기하급수적으로 실력이 증진되고, 이에 따라 급여도 따라오는 것이 이상적이다. 이 양성 피드백(선순환)의 start-up, 즉 부싯돌의 spark가 일어나지 않은 경우에는 분명 답답할 것이다.</p>
-          <p>하지만 우리가 마음을 조급하게 먹는다고 상황이 나아지지는 않는다는 점을 염두에 두어야 한다. "If you are to control you can't control, you can't control the only thing you can control, yourself."라는 말이 있다. 마음이 흔들리고 불안할 때마다, 내가 할 수 있는 일들을 착실히 하면서 때를 기다리는 겸허한 자세를 갖춰야 한다는 것을 상기해야 할 것이다. 더욱 다양한 경험을 치열하게 쌓고, 느즈막이 하고 시은 일을 발견하더라도, 그것은 반드시 늦었다고 볼 수는 없지 않을까? 
-          </p>
-          <p>인간이 할 수 있는 일이 별로 없다는 것을 인정하고 받아들여야 한다.</p>
-        </div>
+        <a href="./writings/what-i-want.html">
+          <h2 class="writing-title">내가 하고 싶은 일</h2>
+          <p class="writing-date">2026-04-30</p>
+          <!-- <p class="writing-excerpt">자기가 하고 싶은 일은 단번에 찾아내어 그 길로 황소처럼 달려가는 사람이 있는 반면, 아무리 자기 내면을 들여다보아도 나 자신의 소리가 들리지 않는 경우도 있다. 반지의 제왕 대사인 "Not all those who wander are lost"를 아는가?</p> -->
+        </a>
+      </article>
+
+      <article class="writing-entry">
+        <a href="./writings/big-company.html">
+          <h2 class="writing-title">대기업에 가면 인생이 "大"인가?</h2>
+          <p class="writing-date">2026-04-30</p>
+          <!-- <p class="writing-excerpt">대기업 인적성 시험을 준비하면서, 영혼이 공허해진 느낌이었다. GSAT이라는 삼성직무적합성평가 시험은, IQ 테스트 성격을 띠는데 요령 터득이 중요하다.</p> -->
+        </a>
       </article>
 
     </div>
 
-    <div class="footer">
-      &copy; 2025 Minguhn Kim
-    </div>
+    <div class="footer">&copy; 2025 Minguhn Kim</div>
   </main>
-
-  <script>
-    (function() {
-      const protectedEl = document.querySelector('.protected');
-      if (!protectedEl) return;
-
-      protectedEl.addEventListener('copy', e => e.preventDefault());
-      protectedEl.addEventListener('cut', e => e.preventDefault());
-      protectedEl.addEventListener('contextmenu', e => e.preventDefault());
-      protectedEl.addEventListener('dragstart', e => e.preventDefault());
-      protectedEl.addEventListener('selectstart', e => e.preventDefault());
-    })();
-  </script>
 </body>
 </html>

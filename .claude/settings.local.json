@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir \"c:\\\\Codes\\\\git_homepage\\\\mingmaru.github.io\\\\writings\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Codes\\git_homepage\\mingmaru.github.io"
+    ]
+  }
+}
