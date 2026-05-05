@@ -216,12 +216,27 @@
     margin-bottom: 10px;
   }
 
+  .education-details .lab-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+  .education-details .lab-info a {
+    color: #0057b7;
+    text-decoration: none;
+  }
+
+  .education-details .lab-info a:hover {
+    text-decoration: underline;
+  }
+
   .education-details .honors {
     font-size: 16px;
     color: #333;
     margin-top: 15px;
     padding-left: 10px;
-    border-left: 3px solid #0057b7; 
+    border-left: 3px solid #0057b7;
   }
   
   /* === NEW: experiences Section Styling === */
@@ -535,18 +550,12 @@
     <section id="home"> 
       <h1 class="hero-title">Hello, I'm <span class="highlight">Ming (Minguhn Kim)</span> 👋</h1>
       <p>
-        I'm a man with interdisciplinary interests who enjoys learning new things.
-        My interests span from hardware to software, from semiconductor to AI.
+        I am a Master's student at POSTECH driven by a simple question: <strong>Why?</strong>
       </p>
-      <!-- <p>
-        I am a researcher specializing in the intersection of Artificial Intelligence and semiconductor device physics. Rather than focusing on traditional circuit architecture, I explore how the fundamental physical properties of semiconductors can inform and optimize intelligent systems. By bridging the gap between physical constraints and algorithmic design, I aim to develop 'hardware-aware' AI that transcends the limitations of conventional software-only approaches.
-      </p> -->
       <p>
-        My research focus lies at the nexus of AI and computational physics. I leverage a deep understanding of semiconductor device physics to architect sophisticated AI models that are inherently grounded in physical reality. I am driven by the challenge of translating complex physical phenomena into intelligent algorithms, moving beyond abstract logic to create high-performance solutions for the next generation of semiconductor technology.
+        I enjoy deconstructing complex systems and rebuilding them to be smarter. My focus lies in the synergy between <strong>Semiconductor and AI</strong>, where I use machine learning to automate and optimize the traditional design process, while grounded in semiconductor physics. I value logic, constant learning, and the discipline it takes to bridge the gap between hardware and software.
+        Ultimately, I am a <strong>growth-oriented</strong> researcher who thrives on new challenges, constantly evolving through lifelong learning.
       </p>
-      <!-- <p>
-        I operate as a bridge between the physical layer and the algorithmic layer. With a core expertise in AI and a rigorous foundation in semiconductor device physics, I focus on the synergy between matter and intelligence. My goal is to move past the traditional boundaries of design, using AI to unlock the potential of physical devices and pioneering new methods for intelligent optimization within the semiconductor domain.
-      </p> -->
     </section>
 
     <section id="education">
@@ -557,7 +566,14 @@
           <h2><img src="images/POSTECH_logo.png" alt="POSTECH" class="school-logo">Pohang University of Science and Technology</h2>
           <p class="degree-info">Master of Science - MS, Semiconductor Technology</p>
           <p class="dates">Feb 2025 - Feb 2027 (Expected)</p>
+          <p class="lab-info"><a href="https://bevillab.postech.ac.kr/index.php" target="_blank" rel="noopener noreferrer">Broadband Electronics by Virtual Intelligence Laboratory (BEVIL)</a>, Prof. Byungsub Kim</p>
           <p class="honors">Entrance Scholarship</p>
+
+          <a class="toggle-link" id="postech-toggle-btn">
+            <i class="fa-solid fa-chevron-right toggle-arrow"></i>
+            <span>Show Details</span>
+          </a>
+          <div class="collapsible-content" id="postech-details">
 
           <div class="presentation-category">
             <h3>Research Topic</h3>
@@ -573,10 +589,49 @@
             <ul class="paper-list">
               <li class="paper-entry">
                 <h4 class="paper-title">Design Automation of Display Source Driver Circuits</h4>
-                <p class="paper-location">Samsung Electronics</p>
+                <p class="paper-location">Samsung Electronics, S.LSI AI Cluster Industry-Academia Collaborative Project</p>
               </li>
             </ul>
           </div>
+
+          <div class="presentation-category">
+            <h3>Courses</h3>
+            <a class="toggle-link" id="postech-course-toggle-btn">
+              <i class="fa-solid fa-chevron-right toggle-arrow"></i>
+              <span>Show Attended Courses</span>
+            </a>
+
+            <div class="collapsible-content scroll-box" id="postech-course-list">
+
+              <div class="presentation-category">
+                <h3>2025 - 1st Semester</h3>
+                <ul class="paper-list">
+                  <li class="paper-entry"><h4 class="paper-title">Artificial Intelligence</h4></li>
+                  <li class="paper-entry"><h4 class="paper-title">Advanced Electronic Circuits</h4></li>
+                  <li class="paper-entry"><h4 class="paper-title">Semiconductor Industry Tech. Seminar</h4></li>
+                </ul>
+              </div>
+
+              <div class="presentation-category">
+                <h3>2025 - 2nd Semester</h3>
+                <ul class="paper-list">
+                  <li class="paper-entry"><h4 class="paper-title">Deep Learning</h4></li>
+                  <li class="paper-entry"><h4 class="paper-title">High-Speed Semiconductor I/O Circuits</h4></li>
+                  <li class="paper-entry"><h4 class="paper-title">Circuit Analysis Algorithms & Software</h4></li>
+                </ul>
+              </div>
+
+              <div class="presentation-category">
+                <h3>2026 - 1st Semester</h3>
+                <ul class="paper-list">
+                  <li class="paper-entry"><h4 class="paper-title">Efficient Machine Learning Systems</h4></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          </div><!-- end postech-details -->
 
           <!-- <div class="presentation-category">
             <h3>Lab Seminar</h3>
@@ -847,7 +902,23 @@
         }
       }
 
-      // --- 1. Setup the CHUNG-ANG Toggle ---
+      // --- 1. Setup the POSTECH Toggle ---
+      createToggle(
+        "postech-toggle-btn",
+        "postech-details",
+        "Show Details",
+        "Hide Details"
+      );
+
+      // --- 2. Setup the POSTECH COURSES Toggle ---
+      createToggle(
+        "postech-course-toggle-btn",
+        "postech-course-list",
+        "Show Attended Courses",
+        "Hide Attended Courses"
+      );
+
+      // --- 3. Setup the CHUNG-ANG Toggle ---
       createToggle(
         "cau-toggle-btn",
         "cau-details",
