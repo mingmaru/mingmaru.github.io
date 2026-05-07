@@ -20,53 +20,72 @@
     scroll-behavior: smooth;
   }
 
-  /* --- The Two-Column Layout --- */
+  /* --- Top Navbar Layout --- */
 
-  /* Sidebar (Left Column) - Fixed */
+  /* Navbar (Top) - Fixed */
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 300px;
-    height: 100vh;
+    width: 100%;
+    height: 65px;
     background-color: #ffffff;
-    padding: 30px;
-    border-right: 1px solid #ddd;
+    padding: 0 30px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
-    overflow-y: auto;
+    justify-content: space-between;
+    z-index: 100;
   }
 
-  /* Main Content (Right Column) - Scrollable */
+  .sidebar-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .sidebar-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Main Content - Scrollable */
   .main-content {
-    margin-left: 300px;
+    margin-left: 0;
+    margin-top: 65px;
     padding: 40px;
   }
 
   /* --- Sidebar Element Styling --- */
 
   .profile-image {
-    width: 150px;
-    height: 150px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    border: 2px solid #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .sidebar h2 {
-    margin: 10px 0;
-    font-size: 24px;
+    margin: 0;
+    font-size: 18px;
     color: #333;
   }
   
+  .sidebar .social-links {
+    display: flex;
+    align-items: center;
+  }
+
   .sidebar .social-links a {
     color: #0057b7;
-    font-size: 28px;
-    margin: 0 2px;
+    font-size: 22px;
+    margin: 0 4px;
     text-decoration: none;
     transition: color 0.3s ease;
   }
@@ -92,17 +111,18 @@
   }
 
   .sidebar nav {
-    margin-top: 30px;
+    margin-top: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
   }
 
   .sidebar nav a {
     color: #333;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    padding: 10px 0;
+    font-size: 15px;
+    padding: 6px 12px;
     transition: color 0.3s ease;
   }
 
@@ -112,8 +132,9 @@
 
   .cv-btn {
     display: inline-block;
-    margin-top: 20px;
-    padding: 8px 18px;
+    margin-top: 0;
+    margin-left: 8px;
+    padding: 7px 15px;
     background-color: #0057b7;
     color: #ffffff;
     text-decoration: none;
@@ -299,15 +320,21 @@
       position: static;
       width: 100%;
       height: auto;
-      border-right: none;
-      border-bottom: 1px solid #ddd;
+      padding: 10px 15px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sidebar-right {
+      flex-wrap: wrap;
+      gap: 4px;
     }
 
     .main-content {
-      margin-left: 0;
+      margin-top: 0;
       padding: 20px;
     }
-    
+
     .presentation-category {
       text-align: left;
     }
@@ -516,48 +543,51 @@
 </head>
 <body>
   <aside class="sidebar">
-    <img src="./images/Profile_Image_Gemini_1_cropped.png" alt="Minguhn Kim Profile Picture" class="profile-image">
-    <h2>Ming</h2>
-    
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-
-      <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
-        <i class="fa-brands fa-github"></i>
-      </a>
-
-      <!-- <a href="https://www.youtube.com/@mingmingart00" class="youtube-link" target="_blank" rel="noopener noreferrer" title="My Youtube Channel">
-        <i class="fa-brands fa-youtube"></i>
-      </a> -->
+    <div class="sidebar-left">
+      <img src="./images/Profile_Image_Gemini_1_cropped.png" alt="Minguhn Kim Profile Picture" class="profile-image">
+      <h2>Ming</h2>
     </div>
-    
-    <nav id="sidebar-nav">
-      <a href="#home" class="sidebar-link">Home</a>
-      <a href="#education" class="sidebar-link">Educations</a>
-      <a href="#experiences" class="sidebar-link">Experiences</a>
-      <!-- <a href="./writings.html" class="sidebar-link">Writings</a> -->
-    </nav>
 
-    <a href="./CV.pdf" target="_blank" class="cv-btn">
-      <i class="fa-solid fa-file-arrow-down"></i> Download CV
-    </a>
+    <div class="sidebar-right">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <!-- <a href="https://www.youtube.com/@mingmingart00" class="youtube-link" target="_blank" rel="noopener noreferrer" title="My Youtube Channel">
+          <i class="fa-brands fa-youtube"></i>
+        </a> -->
+      </div>
+
+      <nav id="sidebar-nav">
+        <a href="#home" class="sidebar-link">Home</a>
+        <a href="#education" class="sidebar-link">Educations</a>
+        <a href="#experiences" class="sidebar-link">Experiences</a>
+        <!-- <a href="./writings.html" class="sidebar-link">Writings</a> -->
+      </nav>
+
+      <a href="./CV.pdf" target="_blank" class="cv-btn">
+        <i class="fa-solid fa-file-arrow-down"></i> Download CV
+      </a>
+    </div>
   </aside>
 
   <main class="main-content">
 
     <section id="home"> 
       <h1 class="hero-title">Hello, I'm <span class="highlight">Ming (Minguhn Kim)</span> 👋</h1>
-      <!-- <p>
-        I am a Master's student at POSTECH driven by a simple question: <strong>Why?</strong>
-      </p> -->
+      <p>
+        <strong>I love learning new things.</strong>
+      </p>
       <p>
         During my master's studies, I found that I really enjoy learning new things, probing into their fundamental principles, explaining them, and eventually pursuing the truth. My core knowledge of electrical engineering, particularly in semiconductor technology, was cultivated during my undergraduate years. Since beginning my master’s, I have challenged myself with the study of AI, and luckily, I have found it to be fascinating as well.
       </p>
-      <p>
-        As of now, I'm planning to shift toward researching semiconductor devices, where I can apply my skills in circuits and AI altogether, and eventually deep dive into the investigation of the order of nature. To the best of my knowledge, a full-stack engineer is required these days. I want to be an expert in the semiconductor industry, while being multidisciplinary and not being afraid of learning new things.
-      </p>
+       <p>
+        Given the industry's shift toward integrated hardware-software solutions, I aim to establish myself as a multidisciplinary expert with a primary focus on <strong>semiconductor devices</strong>, dedicated to driving innovations for the betterment of global society.      </p>
+       </p>
+     
     </section>
 
     <section id="education">
