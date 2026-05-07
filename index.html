@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 100;
   }
 
@@ -130,6 +130,21 @@
     color: #0057b7;
   }
 
+  .sidebar nav a.active {
+    color: #0057b7;
+    border-bottom: 2px solid #0057b7;
+    padding-bottom: 4px;
+  }
+
+  /* --- Tab View --- */
+  .tab-view {
+    display: none;
+  }
+
+  .tab-view.active {
+    display: block;
+  }
+
   .cv-btn {
     display: inline-block;
     margin-top: 0;
@@ -148,6 +163,48 @@
     background-color: #003f8a;
   }
 
+  /* --- Hero Profile Image --- */
+  .hero-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 28px;
+    gap: 14px;
+  }
+
+  .hero-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .hero-social-links {
+    display: flex;
+    gap: 18px;
+  }
+
+  .hero-social-links a {
+    color: #0057b7;
+    font-size: 30px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .hero-social-links a:hover {
+    color: #003366;
+  }
+
+  .hero-social-links .github-link {
+    color: #1a1a1a;
+  }
+
+  .hero-social-links .github-link:hover {
+    color: #555555;
+  }
+
   /* --- Main Content Element Styling --- */
 
   .main-content h1 {
@@ -157,6 +214,7 @@
 
   .hero-title {
     color: #1a1a1a !important;
+    text-align: center;
   }
 
   .hero-title .highlight {
@@ -539,44 +597,119 @@
     to {transform: scale(1)}
   }
 
+  /* --- CV Section Styles --- */
+  .cv-download-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+  }
+
+  .cv-block {
+    margin-bottom: 36px;
+  }
+
+  .cv-section-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0057b7;
+    border-bottom: 2px solid #0057b7;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  .cv-entry {
+    margin-bottom: 20px;
+    padding-left: 14px;
+    border-left: 3px solid #e0e8f5;
+  }
+
+  .cv-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 3px;
+  }
+
+  .cv-institution {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1a1a1a;
+  }
+
+  .cv-dates {
+    font-size: 13px;
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .cv-degree {
+    font-size: 15px;
+    color: #333;
+    margin: 3px 0;
+    font-style: italic;
+  }
+
+  .cv-detail {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+    line-height: 1.5;
+  }
+
+  .cv-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+
+  .cv-skill-item {
+    background-color: #f0f5ff;
+    border-radius: 6px;
+    padding: 10px 14px;
+  }
+
+  .cv-skill-item strong {
+    display: block;
+    font-size: 13px;
+    color: #0057b7;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .cv-skill-item span {
+    font-size: 14px;
+    color: #333;
+  }
+
   </style>
 </head>
 <body>
   <aside class="sidebar">
-    <div class="sidebar-left">
-      <img src="./images/Profile_Image_Gemini_1_cropped.png" alt="Minguhn Kim Profile Picture" class="profile-image">
-      <h2>Ming</h2>
-    </div>
-
-    <div class="sidebar-right">
-      <div class="social-links">
-        <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <!-- <a href="https://www.youtube.com/@mingmingart00" class="youtube-link" target="_blank" rel="noopener noreferrer" title="My Youtube Channel">
-          <i class="fa-brands fa-youtube"></i>
-        </a> -->
-      </div>
-
       <nav id="sidebar-nav">
-        <a href="#home" class="sidebar-link">Home</a>
-        <a href="#education" class="sidebar-link">Educations</a>
-        <a href="#experiences" class="sidebar-link">Experiences</a>
-        <!-- <a href="./writings.html" class="sidebar-link">Writings</a> -->
+        <a href="#" class="sidebar-link active" data-tab="home">Home</a>
+        <a href="#" class="sidebar-link" data-tab="cv">CV</a>
       </nav>
-
-      <a href="./CV.pdf" target="_blank" class="cv-btn">
-        <i class="fa-solid fa-file-arrow-down"></i> Download CV
-      </a>
-    </div>
   </aside>
 
   <main class="main-content">
 
-    <section id="home"> 
+    <div id="view-home" class="tab-view active">
+    <section id="home">
+      <div class="hero-profile">
+        <img src="./images/Profile_Image_Gemini_1_cropped.png" alt="Minguhn Kim Profile Picture" class="hero-profile-image">
+        <div class="hero-social-links">
+          <a href="https://www.linkedin.com/in/minguhn-kim-8a8775288/" target="_blank" rel="noopener noreferrer" title="My LinkedIn Profile">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/mingmaru" class="github-link" target="_blank" rel="noopener noreferrer" title="My GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
       <h1 class="hero-title">Hello, I'm <span class="highlight">Ming (Minguhn Kim)</span> 👋</h1>
       <p>
         <strong>I love learning new things.</strong>
@@ -896,7 +1029,121 @@
       </div>
 
     </section>
- 
+    </div><!-- end view-home -->
+
+    <div id="view-cv" class="tab-view">
+    <section id="cv">
+      <h1>Curriculum Vitae</h1>
+
+      <div class="cv-download-bar">
+        <a href="./CV.pdf" target="_blank" class="cv-btn">
+          <i class="fa-solid fa-file-arrow-down"></i> Download CV
+        </a>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-block">
+        <h2 class="cv-section-title">Education</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">Pohang University of Science and Technology (POSTECH)</span>
+            <span class="cv-dates">Feb 2025 – Feb 2027 (Expected)</span>
+          </div>
+          <p class="cv-degree">M.S., Graduate School of Semiconductor Technology (GSST)</p>
+          <p class="cv-detail">Broadband Electronics by Virtual Intelligence Laboratory (BEVIL) &mdash; Advisor: Prof. Byungsub Kim</p>
+          <p class="cv-detail">Entrance Scholarship</p>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">Chung-Ang University (CAU)</span>
+            <span class="cv-dates">Mar 2019 – Feb 2025</span>
+          </div>
+          <p class="cv-degree">B.E., Electrical and Electronics Engineering (EE)</p>
+          <p class="cv-detail">Summa Cum Laude &mdash; GPA: 4.34 / 4.5</p>
+        </div>
+      </div>
+
+      <!-- Research -->
+      <div class="cv-block">
+        <h2 class="cv-section-title">Research</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">AI-driven Analog Circuit Design Automation</span>
+            <span class="cv-dates">Feb 2025 – Present</span>
+          </div>
+          <p class="cv-degree">Graduate Researcher, BEVIL, POSTECH</p>
+          <p class="cv-detail">Design Automation of Display Source Driver Circuits</p>
+          <p class="cv-detail">Industry collaboration: Samsung Electronics, S.LSI AI Cluster Industry-Academia Cooperative Project</p>
+        </div>
+      </div>
+
+      <!-- Research Experience -->
+      <div class="cv-block">
+        <h2 class="cv-section-title">Research Experience</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">Microwave Antenna, Device and Systems (MADs), POSTECH</span>
+            <span class="cv-dates">Jan 2024</span>
+          </div>
+          <p class="cv-degree">Research Intern</p>
+          <p class="cv-detail">Electromagnetic simulation using Ansys HFSS</p>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">Music &amp; Audio Research Group (MARG), Seoul National University</span>
+            <span class="cv-dates">Jul 2023 – Aug 2023</span>
+          </div>
+          <p class="cv-degree">Research Intern</p>
+          <p class="cv-detail">Deep learning research using PyTorch</p>
+        </div>
+      </div>
+
+      <!-- Awards & Honors -->
+      <div class="cv-block">
+        <h2 class="cv-section-title">Awards &amp; Honors</h2>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">Dean's Award, College of ICT Engineering</span>
+            <span class="cv-dates">Dec 2024</span>
+          </div>
+          <p class="cv-detail">Chung-Ang University, 2024 CAU Engineering Academic Festival</p>
+          <p class="cv-detail">Team "Circuit Emperor" &mdash; Designed an Automatic Gain Control (AGC) amplifier</p>
+        </div>
+
+      </div>
+
+      <!-- Skills -->
+      <div class="cv-block">
+        <h2 class="cv-section-title">Skills</h2>
+        <div class="cv-skills-grid">
+          <div class="cv-skill-item">
+            <strong>Programming</strong>
+            <span>Python, PyTorch</span>
+          </div>
+          <div class="cv-skill-item">
+            <strong>Simulation</strong>
+            <span>Ansys HFSS, SPICE</span>
+          </div>
+          <div class="cv-skill-item">
+            <strong>EDA / Circuit Design</strong>
+            <span>Analog Circuit Design Automation</span>
+          </div>
+          <div class="cv-skill-item">
+            <strong>AI / ML</strong>
+            <span>Deep Learning, LLM-based Automation</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    </div><!-- end view-cv -->
+
     <div class="footer">
       &copy; 2025 Minguhn Kim
     </div>
@@ -933,6 +1180,25 @@
           });
         }
       }
+
+      // --- Tab Switching ---
+      const tabLinks = document.querySelectorAll('.sidebar-link[data-tab]');
+      const tabViews = document.querySelectorAll('.tab-view');
+
+      tabLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetTab = this.dataset.tab;
+
+          tabLinks.forEach(function(l) { l.classList.remove('active'); });
+          tabViews.forEach(function(v) { v.classList.remove('active'); });
+
+          this.classList.add('active');
+          document.getElementById('view-' + targetTab).classList.add('active');
+
+          window.scrollTo(0, 0);
+        });
+      });
 
       // --- 1. Setup the POSTECH Toggle ---
       createToggle(
