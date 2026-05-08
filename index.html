@@ -660,7 +660,67 @@
     to {transform: scale(1)}
   }
 
+  /* --- CV Side Navigation --- */
+  .cv-side-nav {
+    position: fixed;
+    left: 24px;
+    top: 95px;
+    width: 210px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 16px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 50;
+  }
+
+  .cv-side-nav .cv-side-label {
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    padding: 4px 10px 8px 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 6px;
+  }
+
+  .cv-side-nav .cv-side-link {
+    display: block;
+    padding: 8px 10px;
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    border-radius: 6px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    line-height: 1.3;
+  }
+
+  .cv-side-nav .cv-side-link:hover {
+    background-color: #f0f4fa;
+    color: #0057b7;
+  }
+
+  .cv-side-nav .cv-side-link.active {
+    background-color: #f0f4fa;
+    color: #0057b7;
+    border-left-color: #0057b7;
+    font-weight: bold;
+  }
+
+  @media (max-width: 1280px) {
+    .cv-side-nav { display: none; }
+  }
+
   /* --- CV Section Styles --- */
+  .cv-block {
+    scroll-margin-top: 80px;
+  }
+
   .cv-download-bar {
     display: flex;
     align-items: center;
@@ -1110,6 +1170,16 @@
     </div><!-- end view-home -->
 
     <div id="view-cv" class="tab-view">
+
+      <aside class="cv-side-nav" id="cv-side-nav">
+        <span class="cv-side-label">CV Sections</span>
+        <a href="#cv-education" class="cv-side-link">Education</a>
+        <a href="#cv-projects" class="cv-side-link">Key Research &amp; Projects</a>
+        <a href="#cv-skills" class="cv-side-link">Technical Skills</a>
+        <a href="#cv-awards" class="cv-side-link">Awards &amp; Languages</a>
+        <a href="#cv-extracurricular" class="cv-side-link">Extracurricular Activities</a>
+      </aside>
+
     <section id="cv">
       <div class="cv-download-bar">
         <h1 style="margin: 0;">Curriculum Vitae</h1>
@@ -1119,45 +1189,45 @@
       </div>
 
       <!-- Education -->
-      <div class="cv-block">
+      <div class="cv-block" id="cv-education">
         <h2 class="cv-section-title">Education</h2>
 
         <div class="cv-entry">
           <div class="cv-entry-header">
-            <span class="cv-institution">Pohang University of Science and Technology (POSTECH)</span>
-            <span class="cv-dates">Feb. 2025 – Feb. 2027 (Expected)</span>
+            <span class="cv-institution">POSTECH (Pohang University of Science and Technology)</span>
+            <span class="cv-dates">Feb. 2025 &ndash; Feb. 2027 (Expected)</span>
           </div>
           <p class="cv-degree">M.S. in Graduate School of Semiconductor Technology &mdash; Pohang, South Korea</p>
-          <p class="cv-detail">BEVIL (Broadband Electronics by Virtual Intelligence Lab) &mdash; Advisor: Prof. Byungsub Kim</p>
+          <p class="cv-detail"><strong>Laboratory:</strong> <a href="https://bevillab.postech.ac.kr/index.php" target="_blank" rel="noopener noreferrer">BEVIL</a> (Broadband Electronics by Virtual Intelligence Lab)</p>
+          <p class="cv-detail"><strong>Advisor:</strong> Prof. Byungsub Kim</p>
           <p class="cv-detail"><strong>Core Research:</strong> AI-driven EDA: Automated Analog Layout Generation and RL-based Circuit Optimization.</p>
-          <p class="cv-detail"><strong>Ongoing Work:</strong> Developing CNN-based layout recognition modules to automate feature extraction and structural analysis of integrated circuits.</p>
+          <p class="cv-detail"><strong>Current Focus:</strong> Developing CNN-based layout recognition modules to enhance automation flows.</p>
         </div>
 
         <div class="cv-entry">
           <div class="cv-entry-header">
             <span class="cv-institution">Chung-Ang University (CAU)</span>
-            <span class="cv-dates">Mar. 2019 – Feb. 2025</span>
+            <span class="cv-dates">Mar. 2019 &ndash; Feb. 2025</span>
           </div>
           <p class="cv-degree">B.S. in Electrical and Electronic Engineering &mdash; Seoul, South Korea</p>
-          <p class="cv-detail">GPA: 4.34 / 4.50 (Summa Cum Laude)</p>
-          <p class="cv-detail"><strong>Military Service:</strong> Completed duty in ROK Army 702nd Special Commando Battalion (Includes 2-year military leave of absence).</p>
+          <p class="cv-detail"><strong>GPA:</strong> 4.34 / 4.50 (Summa Cum Laude)</p>
+          <p class="cv-detail"><strong>Military Service:</strong> Sergeant, ROK Army 702nd Special Commando Battalion. (2-years leave of absence)</p>
         </div>
       </div>
 
       <!-- Key Research & Projects -->
-      <div class="cv-block">
+      <div class="cv-block" id="cv-projects">
         <h2 class="cv-section-title">Key Research &amp; Projects</h2>
 
         <div class="cv-entry">
           <div class="cv-entry-header">
             <span class="cv-institution">Samsung AI Cluster Project</span>
-            <span class="cv-dates">2025 – 2026</span>
+            <span class="cv-dates">2025 &ndash; 2026</span>
           </div>
-          <p class="cv-degree">Primary Developer &mdash; DDI Layout Automation via A* Search Algorithm</p>
-          <p class="cv-detail">Engineered a GUI-based routing automation tool for Display Driver IC (DDI) layout designs, optimizing industrial workflows.</p>
-          <p class="cv-detail">Leveraged AI-native development environments (Claude Code) to accelerate complex software architecture design and algorithm prototyping.</p>
-          <p class="cv-detail">Implemented customized A* search logic to optimize metal routing paths, significantly reducing manual design overhead.</p>
-          <p class="cv-detail">Orchestrated software debugging and feature integration to enhance tool stability and design efficiency.</p>
+          <p class="cv-degree">Lead Developer &mdash; DDI Layout Automation</p>
+          <p class="cv-detail">Engineered a GUI-based routing automation tool for Display Driver IC (DDI) layout, streamlining industrial design workflows.</p>
+          <p class="cv-detail">Utilized AI-native development environments (Claude Code) to accelerate software architecture design and algorithm prototyping.</p>
+          <p class="cv-detail">Implemented A* search algorithms to achieve robust automation in analog circuit design.</p>
         </div>
 
         <div class="cv-entry">
@@ -1166,40 +1236,36 @@
             <span class="cv-dates">2025</span>
           </div>
           <p class="cv-degree">Research Contributor</p>
-          <p class="cv-detail">Supported the development of a Python-based framework to automate Continuous-Time Linear Equalizer (CTLE) parameter tuning.</p>
-          <p class="cv-detail">Assisted in applying Actor-Critic algorithms to bridge complex analog circuit behaviors with automated design flows.</p>
+          <p class="cv-detail">Contributed to a Python-based framework designed to automate Continuous-Time Linear Equalizer (CTLE) parameter tuning.</p>
+          <p class="cv-detail">Applied Actor-Critic algorithms to bridge the gap between complex analog behaviors and automated design flows.</p>
         </div>
       </div>
 
       <!-- Technical Skills -->
-      <div class="cv-block">
+      <div class="cv-block" id="cv-skills">
         <h2 class="cv-section-title">Technical Skills</h2>
         <div class="cv-skills-grid">
           <div class="cv-skill-item">
             <strong>AI &amp; Programming</strong>
-            <span>Python (PyTorch, NumPy, Pandas), Claude Code (AI-Assisted Development), C/C++ (Basic), Git</span>
+            <span>Python (PyTorch, NumPy, Pandas), Claude Code, C/C++ (Basic), Git</span>
           </div>
           <div class="cv-skill-item">
             <strong>Design Tools</strong>
             <span>Cadence Virtuoso (Custom IC Design/Layout)</span>
           </div>
-          <div class="cv-skill-item">
-            <strong>Algorithms</strong>
-            <span>Reinforcement Learning (Actor-Critic), CNN-based Layout Recognition, Graph Neural Networks, A* Search, Rule-based Automation</span>
-          </div>
         </div>
       </div>
 
       <!-- Awards & Languages -->
-      <div class="cv-block">
+      <div class="cv-block" id="cv-awards">
         <h2 class="cv-section-title">Awards &amp; Languages</h2>
 
         <div class="cv-entry">
           <div class="cv-entry-header">
-            <span class="cv-institution">Languages</span>
+            <span class="cv-institution">Dean's Award (College of ICT Engineering)</span>
+            <span class="cv-dates">Dec. 2024</span>
           </div>
-          <p class="cv-detail">OPIc Advanced Low (AL) &mdash; Jan. 2026</p>
-          <p class="cv-detail">NewTEPS 387 &mdash; Mar. 2024</p>
+          <p class="cv-detail">2024 CAU Engineering Academic Festival</p>
         </div>
 
         <div class="cv-entry">
@@ -1208,24 +1274,31 @@
           </div>
           <p class="cv-detail">Chung-Ang University (Multiple-semester recipient)</p>
         </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
+            <span class="cv-institution">Languages</span>
+          </div>
+          <p class="cv-detail">OPIc Advanced Low (AL) (Jan. 2026), NewTEPS 387 (Mar. 2024)</p>
+        </div>
       </div>
 
       <!-- Extracurricular Activities -->
-      <div class="cv-block">
+      <div class="cv-block" id="cv-extracurricular">
         <h2 class="cv-section-title">Extracurricular Activities</h2>
 
         <div class="cv-entry">
           <div class="cv-entry-header">
-            <span class="cv-institution">Music Production &amp; Songwriting</span>
+            <span class="cv-institution">Music Production</span>
           </div>
-          <p class="cv-detail">Experience in composing and performing as a singer-songwriter using DAWs and piano; enjoys creative expression as a balance to technical research.</p>
+          <p class="cv-detail">Singer-songwriter with proficiency in piano, guitar and DAWs; focuses on creative problem-solving through musical composition.</p>
         </div>
 
         <div class="cv-entry">
           <div class="cv-entry-header">
             <span class="cv-institution">Physical Fitness</span>
           </div>
-          <p class="cv-detail">Maintains a consistent routine of weight training and running for health and long-term stamina.</p>
+          <p class="cv-detail">Maintains disciplined endurance through consistent weight training and running.</p>
         </div>
       </div>
 
@@ -1287,6 +1360,42 @@
           window.scrollTo(0, 0);
         });
       });
+
+      // --- CV Side Nav: Smooth Scroll + Scroll Spy ---
+      const cvSideLinks = document.querySelectorAll('.cv-side-link');
+      const cvSections = Array.from(cvSideLinks).map(function(link) {
+        return document.getElementById(link.getAttribute('href').slice(1));
+      }).filter(Boolean);
+
+      cvSideLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.getElementById(this.getAttribute('href').slice(1));
+          if (target) {
+            const top = target.getBoundingClientRect().top + window.scrollY - 80;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      function updateCvActiveSection() {
+        const cvView = document.getElementById('view-cv');
+        if (!cvView || !cvView.classList.contains('active')) return;
+
+        const offset = 120;
+        let current = cvSections[0];
+        for (const sec of cvSections) {
+          if (sec.getBoundingClientRect().top - offset <= 0) {
+            current = sec;
+          }
+        }
+        cvSideLinks.forEach(function(link) {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + current.id);
+        });
+      }
+
+      updateCvActiveSection();
+      window.addEventListener('scroll', updateCvActiveSection, { passive: true });
 
       // --- 1. Setup the POSTECH Toggle ---
       createToggle(
