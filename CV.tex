@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper,sans]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[left=1.5cm, right=1.5cm, top=1.8cm, bottom=1.8cm]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+
+% --- Custom Colors (Darker Blue Theme) ---
+\definecolor{themeblue}{RGB}{0, 48, 135} 
+\definecolor{graytext}{RGB}{70, 70, 70}
+
+% --- Style Settings ---
+\hypersetup{
+    colorlinks=true,
+    urlcolor=themeblue,
+    linkcolor=themeblue
+}
+
+\titleformat{\section}
+  {\large\bfseries\color{themeblue}}{}{0pt}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+\begin{document}
+
+% --- Header ---
+\begin{center}
+    {\LARGE \textbf{\color{themeblue} Minguhn Kim}} \\ \vspace{5pt}
+    \small
+    \color{graytext}
+    \faPhone* \ +82-10-5004-7013 \quad 
+    \faEnvelope \ \href{mailto:minguhn@postech.ac.kr}{minguhn@postech.ac.kr} \\ \vspace{3pt}
+    \faLinkedin \ \href{https://www.linkedin.com/in/minguhn-kim-8a8775288/?locale=ko}{linkedin.com/in/minguhn-kim} \quad 
+    \faGithub \ \href{https://github.com/mingmaru}{github.com/mingmaru}
+\end{center}
+
+% --- Education ---
+\section{Education}
+\noindent\textbf{POSTECH (Pohang University of Science and Technology)} \hfill Feb. 2025 -- Feb. 2027 (Expected) \\
+\textit{M.S. in Graduate School of Semiconductor Technology} \hfill Pohang, South Korea \\
+\textbf{Laboratory:} \href{https://bevillab.postech.ac.kr/index.php}{BEVIL} (Broadband Electronics by Virtual Intelligence Lab) \\
+\textbf{Advisor:} Prof. Byungsub Kim
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt]
+    \item \textbf{Scholarship:} Recipient of the Graduate School Entrance Scholarship.
+    \item \textbf{Core Research:} AI-driven EDA: Automated Analog Layout Generation and RL-based Circuit Optimization.
+    \item \textbf{Current Focus:} Developing CNN-based layout recognition modules to enhance automation flows.
+\end{itemize}
+
+\vspace{5pt}
+
+\noindent\textbf{Chung-Ang University (CAU)} \hfill Mar. 2019 -- Feb. 2025 \\
+\textit{B.S. in Electrical and Electronic Engineering} \hfill Seoul, South Korea
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt]
+    \item \textbf{GPA: 4.34 / 4.50} (\textbf{Summa Cum Laude})
+    \item \textbf{Military Service:} Sergeant, ROK Army 702nd Special Commando Battalion. (2-years leave of absence)
+\end{itemize}
+
+% --- Key Research & Projects ---
+\section{Key Research \& Projects}
+
+\noindent\textbf{Samsung AI Cluster Project} \hfill 2025 -- 2026 \\
+\textit{Lead Developer | DDI Layout Automation}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt]
+    \item Engineered a GUI-based routing automation tool for Display Driver IC (DDI) layout, streamlining industrial design workflows.
+    \item Utilized AI-native development environments (Claude Code) to accelerate software architecture design and algorithm prototyping.
+    \item Implemented A* search algorithms to achieve robust automation in analog circuit design.
+\end{itemize}
+
+\vspace{5pt}
+
+\noindent\textbf{CTLE Optimization via Reinforcement Learning} \hfill 2025 \\
+\textit{Research Contributor}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt]
+    \item Contributed to a Python-based framework designed to automate Continuous-Time Linear Equalizer (CTLE) parameter tuning.
+    \item Applied Actor-Critic algorithms to bridge the gap between complex analog behaviors and automated design flows.
+\end{itemize}
+
+% --- Technical Skills ---
+\section{Technical Skills}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{AI \& Programming:} Python (PyTorch, NumPy, Pandas), Claude Code, C/C++, Git.
+    \item \textbf{Design Tools:} Cadence Virtuoso (Custom IC Design/Layout).
+\end{itemize}
+
+% --- Awards & Languages ---
+\section{Awards \& Languages}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{Dean's Award (College of ICT Engineering):} 2024 CAU Engineering Academic Festival \hfill Dec. 2024
+    \item \textbf{Academic Excellence Scholarship:} Chung-Ang University (Multiple-semester recipient)
+    \item \textbf{Languages:} OPIc Advanced Low (AL) (Jan. 2026), NewTEPS 387 (Mar. 2024)
+\end{itemize}
+
+% --- Activities ---
+\section{Extracurricular Activities}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Music Production:} Singer-songwriter with proficiency in piano, guitar and DAWs; focuses on creative problem-solving through musical composition.
+    \item \textbf{Physical Fitness:} Maintains disciplined endurance through consistent weight training and running.
+\end{itemize}
+
+\end{document}

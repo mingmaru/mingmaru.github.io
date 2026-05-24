@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir \"c:\\\\Codes\\\\git_homepage\\\\mingmaru.github.io\\\\writings\")"
+      "Bash(mkdir \"c:\\\\Codes\\\\git_homepage\\\\mingmaru.github.io\\\\writings\")",
+      "Bash(where pdflatex *)",
+      "Bash(where xelatex *)",
+      "Bash(where lualatex *)",
+      "PowerShell($pdflatex = Get-Command pdflatex -ErrorAction SilentlyContinue; $xelatex = Get-Command xelatex -ErrorAction SilentlyContinue; $lualatex = Get-Command lualatex -ErrorAction SilentlyContinue; $latexmk = Get-Command latexmk -ErrorAction SilentlyContinue; \"pdflatex: $\\($pdflatex.Source\\)\"; \"xelatex: $\\($xelatex.Source\\)\"; \"lualatex: $\\($lualatex.Source\\)\"; \"latexmk: $\\($latexmk.Source\\)\")",
+      "PowerShell($paths = @\\(\"C:\\\\texlive\", \"C:\\\\Program Files\\\\MiKTeX\", \"C:\\\\Program Files \\(x86\\)\\\\MiKTeX\", \"C:\\\\Users\\\\haroo\\\\AppData\\\\Local\\\\Programs\\\\MiKTeX\", \"C:\\\\Users\\\\haroo\\\\AppData\\\\Roaming\\\\MiKTeX\"\\); foreach \\($p in $paths\\) { if \\(Test-Path $p\\) { \"FOUND: $p\" } })",
+      "PowerShell($docker = Get-Command docker -ErrorAction SilentlyContinue; \"docker: $\\($docker.Source\\)\"; $choco = Get-Command choco -ErrorAction SilentlyContinue; \"choco: $\\($choco.Source\\)\"; $winget = Get-Command winget -ErrorAction SilentlyContinue; \"winget: $\\($winget.Source\\)\")",
+      "PowerShell(docker info --format \"{{.ServerVersion}}\" 2>&1)"
     ],
     "additionalDirectories": [
       "c:\\Codes\\git_homepage\\mingmaru.github.io"
