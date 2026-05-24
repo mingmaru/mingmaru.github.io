@@ -1310,7 +1310,7 @@
     </div><!-- end view-cv -->
 
     <div class="footer">
-      &copy; 2025 Minguhn Kim
+      &copy; 2025 Minguhn Kim &nbsp;&middot;&nbsp; Last updated: <span id="last-updated">—</span>
     </div>
 
   </main>
@@ -1324,7 +1324,18 @@
   
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      
+
+      // --- Last Updated (from HTML file's lastModified) ---
+      (function() {
+        const el = document.getElementById('last-updated');
+        if (!el) return;
+        const d = new Date(document.lastModified);
+        const yyyy = d.getFullYear();
+        const mm = String(d.getMonth() + 1).padStart(2, '0');
+        const dd = String(d.getDate()).padStart(2, '0');
+        el.textContent = yyyy + '-' + mm + '-' + dd;
+      })();
+
       // --- Helper Function to create a toggle ---
       function createToggle(btnId, contentId, showText, hideText) {
         const toggleBtn = document.getElementById(btnId);
