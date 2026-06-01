@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Read(//c/Users/minguhn/**)",
+      "Bash(python3:*)"
     ]
   }
 }
