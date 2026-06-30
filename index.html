@@ -558,7 +558,6 @@
   .collapsible-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
     margin-top: 0;
   }
 
@@ -566,15 +565,13 @@
     max-height: 400px;
     overflow-y: auto;
     margin-top: 20px;
-    transition: max-height 0.5s ease-in;
     border: 1px solid #eee;
     padding: 10px;
   }
 
   .collapsible-content.show {
-    max-height: 2000px;
+    max-height: none;
     margin-top: 20px;
-    transition: max-height 0.5s ease-in;
   }
   
   /* --- Project Figure Thumbnails --- */
