@@ -1237,8 +1237,21 @@
 
         <div class="cv-entry">
           <div class="cv-entry-header">
+            <span class="cv-institution">CNN-based Layout Recognition for Generator Parameter Extraction</span>
+            <span class="cv-dates">Aug 2026 &ndash; Present</span>
+          </div>
+          <p class="cv-degree">Research Contributor
+          <ul class="cv-bullet-list">
+            <li class="cv-detail">Developing a residual CNN framework that classifies cell types and regresses design parameters directly from layout data.</li>
+            <li class="cv-detail">Building a workflow that converts manual layouts into parameterized generator libraries, leveraging standard and difference datasets for accurate parameter estimation.</li>
+            <li class="cv-detail">Extending the framework to a previously developed DDI layout generator, exploring the inverse design problem of inferring design parameters from finished layouts.</li>
+          </ul>
+        </div>
+
+        <div class="cv-entry">
+          <div class="cv-entry-header">
             <span class="cv-institution">Samsung S.LSI CMOS Image Sensor (CIS) Layout Optimization</span>
-            <span class="cv-dates">May 2026 &ndash; Present</span>
+            <span class="cv-dates">May 2026 &ndash; Jul 2026</span>
           </div>
           <p class="cv-degree">Project Collaborator &mdash; RL-based Layout Optimization</p>
           <ul class="cv-bullet-list">
@@ -1338,7 +1351,7 @@
     </div><!-- end view-cv -->
 
     <div class="footer">
-      Last updated: <span id="last-updated">—</span>
+      &copy; 2025 Minguhn Kim
     </div>
 
   </main>
@@ -1352,17 +1365,6 @@
   
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-
-      // --- Last Updated (from HTML file's lastModified) ---
-      (function() {
-        const el = document.getElementById('last-updated');
-        if (!el) return;
-        const d = new Date(document.lastModified);
-        const yyyy = d.getFullYear();
-        const mm = String(d.getMonth() + 1).padStart(2, '0');
-        const dd = String(d.getDate()).padStart(2, '0');
-        el.textContent = yyyy + '-' + mm + '-' + dd;
-      })();
 
       // --- Helper Function to create a toggle ---
       function createToggle(btnId, contentId, showText, hideText) {
