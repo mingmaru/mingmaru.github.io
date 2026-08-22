@@ -828,6 +828,7 @@
       <nav id="sidebar-nav">
         <a href="#" class="sidebar-link active" data-tab="home">Home</a>
         <a href="#" class="sidebar-link" data-tab="cv">CV</a>
+        <a href="./writings.html" class="sidebar-link">Writings</a>
       </nav>
   </aside>
 
@@ -1432,6 +1433,12 @@
           window.scrollTo(0, 0);
         });
       });
+
+      // Open a tab directly via URL hash (e.g. index.html#cv from the Writings pages)
+      if (window.location.hash === '#cv') {
+        const cvLink = document.querySelector('.sidebar-link[data-tab="cv"]');
+        if (cvLink) cvLink.click();
+      }
 
       // --- CV Side Nav: Smooth Scroll + Scroll Spy ---
       const cvSideLinks = document.querySelectorAll('.cv-side-link');
